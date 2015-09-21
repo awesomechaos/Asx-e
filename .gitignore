@@ -1,0 +1,5 @@
+/node_modules
+.env
+
+#phpstorm config
+.idea/workspace.xml
