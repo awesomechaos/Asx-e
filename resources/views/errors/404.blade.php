@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Be right back.</title>
+        <title>Aaaoh.页面未找到</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
 
@@ -36,7 +36,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Be right back.</div>
+                <div class="title">404 页面未找到. Bad Luck</div>
             </div>
         </div>
     </body>

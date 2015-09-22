@@ -38,6 +38,13 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        //data not found in database jump to 404
+        if ($e
+            instanceof
+            \Illuminate\Database\Eloquent\ModelNotFoundException)
+        {
+            abort(404);
+        }
         return parent::render($request, $e);
     }
 }
