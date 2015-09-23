@@ -11,7 +11,7 @@ class AdminController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(Requests\StoreAdminUserRequest $request)
     {
         //
         $arr = array(
@@ -33,10 +33,14 @@ class AdminController extends Controller
             )
 
         );
-        $user = AdminUser::findOrFail(1);
-        return $user;
+//        $user = AdminUser::findOrFail(1);
+        return view('admin.b');
 //        $tt = array( '1' , '2', '3');
 //        return view('admin.index', compact('arr'));
+    }
+    public function i()
+    {
+        return view('admin.b');
     }
     /**
      * Show the form for creating a new resource.
