@@ -34,13 +34,17 @@ class AdminController extends Controller
 
         );
 //        $user = AdminUser::findOrFail(1);
-        return view('admin.b');
+//        return view('admin.b');
+        return 'opps';
 //        $tt = array( '1' , '2', '3');
 //        return view('admin.index', compact('arr'));
     }
     public function i()
     {
-        return view('admin.b');
+        $head = array();
+        $head['title'] = 'test';
+        $head['isAdmin'] = true;
+        return view('admin.index', compact('head'));
     }
     /**
      * Show the form for creating a new resource.
