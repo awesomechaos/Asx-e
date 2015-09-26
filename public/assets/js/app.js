@@ -553,6 +553,7 @@ var App = function () {
         }
     }
 
+	//asx:需要添加cookie记录主题
     var handleTheme = function () {
 
         var panel = $('.color-panel');
@@ -563,7 +564,7 @@ var App = function () {
         
         $('.sidebar-option', panel).val("default");
         $('.header-option', panel).val("fixed");
-        $('.footer-option', panel).val("default"); 
+        $('.footer-option', panel).val("fixed"); 
 
         //handle theme layout
         var resetLayout = function () {

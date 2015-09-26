@@ -546,6 +546,9 @@ ul.page-sidebar-menu > li.active > a .selected {
   right:0px;
   top:8px;
 }
+.page-sidebar-fixed ul.page-sidebar-menu > li.active > a .selected {
+  display: none;
+}
 
 .page-sidebar ul > li > a > .arrow:before {  
    float: right;

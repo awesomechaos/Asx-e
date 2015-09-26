@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Aaaoh.页面未找到</title>
+        <title>Aaaoh.404 Page not found</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
 
@@ -36,7 +36,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">404 页面未找到. Bad Luck</div>
+                <div class="title">404 Page Not Found. Bad Luck</div>
             </div>
         </div>
     </body>

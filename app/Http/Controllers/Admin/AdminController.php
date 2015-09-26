@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -44,9 +44,10 @@ class AdminController extends Controller
         $head = array();
         $head['title'] = 'test';
         $head['isAdmin'] = true;
-        $sidebar['pagename'] = 'Layouts';
-        $sidebar['subpage'] = 'Horzontal Menu 1';
-        return view('admin.index', compact('head','sidebar'));
+        $nav['pageName'] = 'Dashboard';
+        $nav['subPage'] = '';
+        $nav['description'] = '';
+        return view('admin.index', compact('head','nav'));
     }
     /**
      * Show the form for creating a new resource.

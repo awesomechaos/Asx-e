@@ -30,7 +30,7 @@ Page header
 Page sidebar
 ***/
 .page-content {
-  border-left: 1px solid #e2e2e2 !important;
+  border-left: 0px solid #e2e2e2 !important;
   border-bottom: 1px solid #e2e2e2 !important;
 }
 .page-sidebar {
@@ -40,7 +40,7 @@ Page sidebar
   border: 0 !important;
 }
 .page-sidebar-fixed .page-sidebar {
-  border-right: 1px solid #e2e2e2 !important;
+  border-right: 0px solid #e2e2e2 !important;
 }
 
 
@@ -68,17 +68,17 @@ ul.page-sidebar-menu > li:hover > a {
   border-top: 1px solid #e8e8e8;
 }
 ul.page-sidebar-menu > li.active > a .selected {
-  right:-7px;
-  top:0px;
-  width: 7px;
-  height: 39px;
-  background-image: url("../../image/sidebar-menu-arrow-green.png");
+  display: block;
+  width: 8px;
+  height: 25px;
+  background-image: url("../../image/sidebar-menu-arrow.png");
+  float: right;
+  position: absolute;
+  right:0px;
+  top:8px;
 }  
 ul.page-sidebar-menu > li.active i {
   color: #fff !important;
-}
-.page-sidebar-fixed ul.page-sidebar-menu > li.active > a .selected {
-  display: none;
 }
 ul.page-sidebar-menu > li.active > a{
   background: #28b779 !important;
@@ -276,7 +276,7 @@ Gritter Notifications
   }
   .page-boxed .page-container {
     background-color: #fafafa;
-    border-left: 1px solid #e2e2e2;
+    border-left: 0px solid #e2e2e2;
     border-bottom: 1px solid #e2e2e2;
   }
   .page-boxed.page-sidebar-fixed .page-container {
@@ -300,7 +300,7 @@ Landscape phone to portrait tablet
   ***/
   .page-sidebar {
     background-color: #f1f1f1 !important;
-    border-right: none !important;
+    border-right: 0;
   }
   .page-sidebar-fixed .page-sidebar {
     border-right: none !important; 

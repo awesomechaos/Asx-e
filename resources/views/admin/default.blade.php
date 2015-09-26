@@ -29,7 +29,7 @@
     {!! Html::style('assets/image/favicon.ico', array('rel' => 'shortcut icon')) !!}
 
 </head>
-<body class="page-header-fixed">
+<body class="page-header-fixed page-footer-fixed">
     @include('admin.header')
 
     <div class="page-container">

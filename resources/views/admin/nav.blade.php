@@ -15,12 +15,6 @@
                     <li class="color-grey" data-style="grey"></li>
                     <li class="color-white color-light" data-style="light"></li>
                 </ul>
-                <label>
-                    <span>Layout</span>
-                    <select class="layout-option m-wrap small">
-                        <option value="fluid" selected>Fluid</option>
-                        <option value="boxed">Boxed</option>
-                    </select>
                 </label>
                 <label>
                     <span>Header</span>
@@ -39,8 +33,8 @@
                 <label>
                     <span>Footer</span>
                     <select class="footer-option m-wrap small">
-                        <option value="fixed">Fixed</option>
-                        <option value="default" selected>Default</option>
+                        <option value="fixed" selected>Fixed</option>
+                        <option value="default">Default</option>
                     </select>
                 </label>
             </div>
@@ -48,22 +42,19 @@
         <!-- END BEGIN STYLE CUSTOMIZER -->
         <!-- BEGIN PAGE TITLE & BREADCRUMB-->
         <h3 class="page-title">
-            Dashboard <small>statistics and more</small>
+            @if ($nav['subPage'] == '')
+                Dashboard <small>{{ $nav['description'] }}</small>
+            @else
+                {{ $nav['subPage'] }} <small>{{ $nav['description'] }}</small>
+            @endif
         </h3>
         <ul class="breadcrumb">
             <li>
                 <i class="icon-home"></i>
-                <a href="index.html">Home</a>
+                <a href="/admin">Home</a>
                 <i class="icon-angle-right"></i>
             </li>
-            <li><a href="#">Dashboard</a></li>
-            <li class="pull-right no-text-shadow">
-                <div id="dashboard-report-range" class="dashboard-date-range tooltips no-tooltip-on-touch-device responsive" data-tablet="" data-desktop="tooltips" data-placement="top" data-original-title="Change dashboard date range">
-                    <i class="icon-calendar"></i>
-                    <span></span>
-                    <i class="icon-angle-down"></i>
-                </div>
-            </li>
+            <li><a href="/{{ $nav['pageName'] }}">{{ $nav['pageName'] }}</a></li>
         </ul>
         <!-- END PAGE TITLE & BREADCRUMB-->
     </div>

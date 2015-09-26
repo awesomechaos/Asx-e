@@ -14,5 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin', 'AdminController@i');
+Route::get('/admin', 'Admin\AdminController@i');
+Route::group(['namespace' => 'Admin'], function()
+{
+    // Controllers Within The "App\Http\Controllers\Admin" Namespace
+    // 根据menu循环注册路由
+    foreach ( Config::get('admin.menu') as $name => $k) {
+        Route::get("/admin/{$name}", "{$name}Controller@i");
+    }
+});
 Route::post('/admin', 'AdminController@index');

@@ -19,11 +19,11 @@
             <!-- END RESPONSIVE QUICK SEARCH FORM -->
         </li>
         @foreach (Config::get('admin.menu') as $name => $arr)
-            <li class="@if ($name == $sidebar['pagename'])active @endif">
+            <li class="@if ($name == $nav['pageName'])active @endif">
                 <a href="{{ $arr['href'] }}">
                     <i class="{{ $arr['icon'] }}"></i>
                     <span class="title">{{ $name }}</span>
-                    @if ($name == $sidebar['pagename'])
+                    @if ($name == $nav['pageName'])
                         <span class="selected"></span>
                         <span class="arrow open"></span>
                     @else
@@ -33,7 +33,7 @@
                 @if (count($arr['submenu']) != 0)
                     <ul class="sub-menu">
                         @foreach ($arr['submenu'] as $subarr)
-                        <li @if ($subarr['name'] == $sidebar['subpage']) class="active" @endif>
+                        <li @if ($subarr['name'] == $nav['subPage']) class="active" @endif>
                             <a href="{{ $subarr['href'] }}">
                                 {{ $subarr['name'] }}</a>
                         </li>
