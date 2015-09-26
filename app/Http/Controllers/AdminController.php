@@ -44,7 +44,9 @@ class AdminController extends Controller
         $head = array();
         $head['title'] = 'test';
         $head['isAdmin'] = true;
-        return view('admin.index', compact('head'));
+        $sidebar['pagename'] = 'Layouts';
+        $sidebar['subpage'] = 'Horzontal Menu 1';
+        return view('admin.index', compact('head','sidebar'));
     }
     /**
      * Show the form for creating a new resource.
