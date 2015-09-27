@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\AdminUser;
+use Cookie;
 class AdminController extends Controller
 {
     /**
@@ -47,6 +48,11 @@ class AdminController extends Controller
         $nav['pageName'] = 'Dashboard';
         $nav['subPage'] = '';
         $nav['description'] = '';
+        if (!isset($_COOKIE['style_color'])) {
+            $head['style_color'] = 'default';
+        } else {
+            $head['style_color'] = $_COOKIE['style_color'];
+        }
         return view('admin.index', compact('head','nav'));
     }
     /**

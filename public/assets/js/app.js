@@ -553,7 +553,6 @@ var App = function () {
         }
     }
 
-	//asx:需要添加cookie记录主题
     var handleTheme = function () {
 
         var panel = $('.color-panel');
@@ -661,7 +660,7 @@ var App = function () {
         // handle theme colors
         var setColor = function (color) {
             $('#style_color').attr("href", "assets/css/themes/" + color + ".css");
-            $.cookie('style_color', color);                
+            $.cookie('style_color', color, {expires: 365, path: "/"});                
         }
 
         $('.icon-color', panel).click(function () {

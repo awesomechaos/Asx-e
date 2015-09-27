@@ -21,8 +21,7 @@
         {!! Html::style('assets/css/style-metro.css') !!}
         {!! Html::style('assets/css/style.css') !!}
         {!! Html::style('assets/css/style-responsive.css') !!}
-        {{--主题选项需要调整，加载为选择过的主题--}}
-        {!! Html::style('assets/css/themes/default.css', array('id' => 'style_color')) !!}
+        {!! Html::style('assets/css/themes/'.$head['style_color'].'.css', array('id' => 'style_color')) !!}
         {!! Html::style('assets/css/uniform.default.css') !!}
     @show
 
@@ -31,7 +30,7 @@
 </head>
 <body class="page-header-fixed page-footer-fixed">
     @include('admin.header')
-
+    {{ Cookie::get('laravel_session') }}
     <div class="page-container">
         @include('admin.sidebar')
         <div class="page-content">
@@ -59,8 +58,8 @@
 
     @section('foot')
         <div class="footer">
-            <div class="footer-inner">
-                    2013 &copy; Metronic by keenthemes.
+            <div class="footer-inner" style="font-family:Tahoma;">
+                    {{ date('Y') }} &copy; Asx-e for experimental use.
             </div>
             <div class="footer-tools">
                 <span class="go-top">
