@@ -2,10 +2,372 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d460c8ee-1b0a-4ba9-abe3-404566ef88f4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/app.js" afterPath="$PROJECT_DIR$/public/assets/js/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/admin/js/global.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.cookie.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.sparkline.min.js" />
+      <change type="DELETED" beforePath="E:\Asx-e\public\assets\js\jquery.cookie.min.js" afterPath="" />
+      <change type="DELETED" beforePath="E:\Asx-e\public\assets\js\jquery.sparkline.min.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/default.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/default.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/header.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/header.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\DT_bootstrap.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/DT_bootstrap.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\about-us.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/about-us.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\animate.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/animate.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\blog.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/blog.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\bootstrap-fileupload.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/bootstrap-fileupload.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\bootstrap-modal.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/bootstrap-modal.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\bootstrap-responsive.min.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/bootstrap-responsive.min.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\bootstrap-responsive1.min.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/bootstrap-responsive1.min.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\bootstrap-tag.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/bootstrap-tag.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\bootstrap-toggle-buttons.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/bootstrap-toggle-buttons.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\bootstrap-tree.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/bootstrap-tree.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\bootstrap-wysihtml5.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/bootstrap-wysihtml5.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\bootstrap.min.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/bootstrap.min.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\chosen.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/chosen.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\clockface.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/clockface.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\colorpicker.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/colorpicker.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\coming-soon.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/coming-soon.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\datepicker.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/datepicker.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\daterangepicker.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/daterangepicker.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\datetimepicker.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/datetimepicker.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\dropzone.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/dropzone.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\email.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/email.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\error.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/error.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\font-awesome.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/font-awesome.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\font-awesome.min.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/font-awesome.min.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\fullcalendar.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/fullcalendar.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\glyphicons.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/glyphicons.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\halflings.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/halflings.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\inbox.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/inbox.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\invoice.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/invoice.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\jquery-ui-1.10.1.custom.min.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/jquery-ui-1.10.1.custom.min.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\jquery.easy-pie-chart.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/jquery.easy-pie-chart.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\jquery.fancybox.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/jquery.fancybox.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\jquery.fileupload-ui.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/jquery.fileupload-ui.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\jquery.gritter.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/jquery.gritter.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\jquery.nestable.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/jquery.nestable.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\jquery.tagsinput.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/jquery.tagsinput.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\jquery.ui.slider.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/jquery.ui.slider.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\jqvmap.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/jqvmap.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\lock.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/lock.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\login-soft.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/login-soft.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\login.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/login.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\multi-select-metro.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/multi-select-metro.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\news.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/news.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\pricing-tables.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/pricing-tables.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\print.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/print.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\profile.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/profile.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\promo.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/promo.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\search.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/search.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\select2_metro.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/select2_metro.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\style-metro.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/style-metro.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\style-non-responsive.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/style-non-responsive.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\style-responsive.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/style-responsive.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\style.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/style.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\themes\blue.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/themes/blue.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\themes\brown.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/themes/brown.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\themes\default.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/themes/default.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\themes\grey.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/themes/grey.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\themes\light.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/themes/light.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\themes\purple.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/themes/purple.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\timeline.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/timeline.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\timepicker.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/timepicker.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\css\uniform.default.css" afterPath="$PROJECT_DIR$/public/assets/admin/css/uniform.default.css" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\1.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/1.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\10.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/10.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\11.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/11.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\2.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/2.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\3.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/3.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\4.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/4.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\5.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/5.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\6.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/6.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\7.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/7.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\8.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/8.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\9.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/9.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\KwPYo.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/KwPYo.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\alpha.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/alpha.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\amazon.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/amazon.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\animated-overlay.gif" afterPath="$PROJECT_DIR$/public/assets/admin/image/animated-overlay.gif" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\avatar.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/avatar.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\avatar1.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/avatar1.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\avatar1_small.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/avatar1_small.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\avatar2.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/avatar2.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\avatar3.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/avatar3.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\behance.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/behance.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\bg-input-focus.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/bg-input-focus.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\bg-input.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/bg-input.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\bg-opacity.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/bg-opacity.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\bg-white-lock.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/bg-white-lock.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\bg\1.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/bg/1.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\bg\2.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/bg/2.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\bg\3.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/bg/3.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\bg\4.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/bg/4.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\blank.gif" afterPath="$PROJECT_DIR$/public/assets/admin/image/blank.gif" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\blogger.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/blogger.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\bstree-halflings.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/bstree-halflings.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\chosen-sprite.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/chosen-sprite.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\datatable-row-openclose.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/datatable-row-openclose.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\deviantart.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/deviantart.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\dribbble.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/dribbble.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\dropbox.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/dropbox.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\earth.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/earth.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\evernote.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/evernote.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\facebook.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/facebook.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\fancybox_loading.gif" afterPath="$PROJECT_DIR$/public/assets/admin/image/fancybox_loading.gif" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\fancybox_overlay.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/fancybox_overlay.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\fancybox_sprite.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/fancybox_sprite.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\favicon.ico" afterPath="$PROJECT_DIR$/public/assets/admin/image/favicon.ico" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/public/assets/admin/image/fontawesome-webfont.eot" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/public/assets/admin/image/fontawesome-webfont.svg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/public/assets/admin/image/fontawesome-webfont.ttf" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/public/assets/admin/image/fontawesome-webfont.woff" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\forrst.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/forrst.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\github.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/github.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphicons-halflings-white.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphicons-halflings-white.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphicons-halflings.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphicons-halflings.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphicons-regular.eot" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphicons-regular.eot" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphicons-regular.svg" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphicons-regular.svg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphicons-regular.ttf" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphicons-regular.ttf" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphicons-regular.woff" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphicons-regular.woff" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphicons-white.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphicons-white.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphicons-white.svg" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphicons-white.svg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphicons.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphicons.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphicons_halflings-white.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphicons_halflings-white.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphicons_halflings-white.svg" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphicons_halflings-white.svg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphicons_halflings.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphicons_halflings.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphicons_halflings.svg" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphicons_halflings.svg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphiconshalflings-regular.eot" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphiconshalflings-regular.eot" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphiconshalflings-regular.svg" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphiconshalflings-regular.svg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphiconshalflings-regular.ttf" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphiconshalflings-regular.ttf" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\glyphiconshalflings-regular.woff" afterPath="$PROJECT_DIR$/public/assets/admin/image/glyphiconshalflings-regular.woff" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\googleplus.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/googleplus.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\gritter-light.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/gritter-light.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\gritter.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/gritter.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\hor-menu-search-close-white.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/hor-menu-search-close-white.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\hor-menu-search-close.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/hor-menu-search-close.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\hor-menu-search.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/hor-menu-search.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\hue.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/hue.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\icon-color-close.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/icon-color-close.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\icon-color.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/icon-color.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\icon-img-down.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/icon-img-down.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\icon-img-up.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/icon-img-up.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\ie-spacer.gif" afterPath="$PROJECT_DIR$/public/assets/admin/image/ie-spacer.gif" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\image1.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/image1.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\image2.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/image2.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\image3.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/image3.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\image4.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/image4.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\image5.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/image5.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\img1.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/img1.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\img1_2.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/img1_2.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\img2.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/img2.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\img3.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/img3.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\img4.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/img4.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\inbox-nav-arrow-blue.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/inbox-nav-arrow-blue.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\instagram.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/instagram.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\iphone.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/iphone.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\item_img.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/item_img.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\item_img1.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/item_img1.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\jolicloud.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/jolicloud.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\js" afterPath="$PROJECT_DIR$/public/assets/admin/image/js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\last-fm.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/last-fm.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\linkedin.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/linkedin.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\loading.gif" afterPath="$PROJECT_DIR$/public/assets/admin/image/loading.gif" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\logo-big.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/logo-big.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\logo.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/logo.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\logo_azteca.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/logo_azteca.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\logo_conquer.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/logo_conquer.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\logo_metronic.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/logo_metronic.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\menu-toggler.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/menu-toggler.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\overlay-icon.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/overlay-icon.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\photo1.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/photo1.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\photo2.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/photo2.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\photo3.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/photo3.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\photo4.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/photo4.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\photo5.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/photo5.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\photo6.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/photo6.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\picasa.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/picasa.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\pintrest.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/pintrest.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\portlet-collapse-icon-white.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/portlet-collapse-icon-white.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\portlet-collapse-icon.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/portlet-collapse-icon.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\portlet-config-icon-white.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/portlet-config-icon-white.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\portlet-config-icon.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/portlet-config-icon.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\portlet-expand-icon-white.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/portlet-expand-icon-white.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\portlet-expand-icon.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/portlet-expand-icon.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\portlet-reload-icon-white.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/portlet-reload-icon-white.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\portlet-reload-icon.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/portlet-reload-icon.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\portlet-remove-icon-white.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/portlet-remove-icon-white.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\portlet-remove-icon.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/portlet-remove-icon.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\preview_02.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/preview_02.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\preview_03.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/preview_03.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\preview_04.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/preview_04.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\preview_05.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/preview_05.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\preview_06.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/preview_06.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\preview_07.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/preview_07.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\preview_08.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/preview_08.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\preview_09.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/preview_09.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\preview_10.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/preview_10.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\preview_11.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/preview_11.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\preview_12.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/preview_12.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\preview_13.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/preview_13.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\preview_14.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/preview_14.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\preview_15.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/preview_15.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\preview_16.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/preview_16.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\preview_17.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/preview_17.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\profile-img.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/profile-img.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\profile.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/profile.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\progressbar.gif" afterPath="$PROJECT_DIR$/public/assets/admin/image/progressbar.gif" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\remove-icon-small.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/remove-icon-small.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\rss.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/rss.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\saturation.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/saturation.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\search-icon.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/search-icon.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\select2-spinner.gif" afterPath="$PROJECT_DIR$/public/assets/admin/image/select2-spinner.gif" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\select2.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/select2.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\select2x2.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/select2x2.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\sidebar-menu-arrow-green2.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/sidebar-menu-arrow-green2.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\sidebar-menu-arrow.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/sidebar-menu-arrow.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\sidebar-search-close.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/sidebar-search-close.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\sidebar-toggler.jpg" afterPath="$PROJECT_DIR$/public/assets/admin/image/sidebar-toggler.jpg" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\skype.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/skype.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\social_facebook.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/social_facebook.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\social_googleplus.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/social_googleplus.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\social_linkedin.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/social_linkedin.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\social_rss.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/social_rss.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\social_twitter.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/social_twitter.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\sort_asc.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/sort_asc.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\sort_asc_disabled.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/sort_asc_disabled.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\sort_both.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/sort_both.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\sort_desc.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/sort_desc.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\sort_desc_disabled.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/sort_desc_disabled.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\spotify.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/spotify.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\sprite.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/sprite.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\spritemap.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/spritemap.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\spritemap@2x.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/spritemap@2x.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\stumbleupon.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/stumbleupon.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\switch.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/switch.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\syncfusion-icons-white.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/syncfusion-icons-white.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\syncfusion-icons.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/syncfusion-icons.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\tumblr.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/tumblr.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\twitter.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/twitter.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\ui-bg_diagonals-thick_18_b81900_40x40.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/ui-bg_diagonals-thick_18_b81900_40x40.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\ui-bg_diagonals-thick_20_666666_40x40.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/ui-bg_diagonals-thick_20_666666_40x40.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\ui-bg_flat_10_000000_40x100.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/ui-bg_flat_10_000000_40x100.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\ui-bg_glass_100_f6f6f6_1x400.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/ui-bg_glass_100_f6f6f6_1x400.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\ui-bg_glass_100_fdf5ce_1x400.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/ui-bg_glass_100_fdf5ce_1x400.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\ui-bg_glass_65_ffffff_1x400.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/ui-bg_glass_65_ffffff_1x400.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\ui-bg_gloss-wave_35_f6a828_500x100.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/ui-bg_gloss-wave_35_f6a828_500x100.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\ui-bg_highlight-soft_100_eeeeee_1x100.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\ui-bg_highlight-soft_75_ffe45c_1x100.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\ui-icons_222222_256x240.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/ui-icons_222222_256x240.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\ui-icons_228ef1_256x240.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/ui-icons_228ef1_256x240.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\ui-icons_888888_256x240.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/ui-icons_888888_256x240.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\ui-icons_ef8c08_256x240.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/ui-icons_ef8c08_256x240.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\ui-icons_ffd27a_256x240.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/ui-icons_ffd27a_256x240.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\ui-icons_ffffff_256x240.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/ui-icons_ffffff_256x240.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\vimeo.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/vimeo.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\vk.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/vk.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\walmart.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/walmart.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\wordpress.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/wordpress.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\xing.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/xing.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\yahoo.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/yahoo.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\image\youtube.png" afterPath="$PROJECT_DIR$/public/assets/admin/image/youtube.png" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\DT_bootstrap.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/DT_bootstrap.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\additional-methods.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/additional-methods.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\app.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/app.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\bootstrap-colorpicker.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/bootstrap-colorpicker.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\bootstrap-datepicker.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/bootstrap-datepicker.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\bootstrap-datetimepicker.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/bootstrap-datetimepicker.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\bootstrap-fileupload.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/bootstrap-fileupload.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\bootstrap-modal.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/bootstrap-modal.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\bootstrap-modalmanager.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/bootstrap-modalmanager.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\bootstrap-rtl.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/bootstrap-rtl.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\bootstrap-tag.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/bootstrap-tag.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\bootstrap-timepicker.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/bootstrap-timepicker.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\bootstrap-tree.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/bootstrap-tree.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\bootstrap-wysihtml5.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/bootstrap-wysihtml5.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\breakpoints.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/breakpoints.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\breakpoints.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/breakpoints.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\calendar.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/calendar.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\canvas-to-blob.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/canvas-to-blob.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\charts.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/charts.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\chosen.jquery.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/chosen.jquery.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\ckeditor.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/ckeditor.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\clockface.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/clockface.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\coming-soon.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/coming-soon.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\contact-us.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/contact-us.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\date.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/date.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\daterangepicker.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/daterangepicker.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\dropzone.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/dropzone.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\excanvas.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/excanvas.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\excanvas.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/excanvas.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\form-components.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/form-components.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\form-fileupload.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/form-fileupload.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\form-samples.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/form-samples.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\form-validation.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/form-validation.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\form-wizard.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/form-wizard.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\fullcalendar.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/fullcalendar.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\gallery.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/gallery.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\gmaps.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/gmaps.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\inbox.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/inbox.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\index.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/index.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery-1.8.3.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery-1.8.3.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery-migrate-1.2.1.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery-migrate-1.2.1.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery-ui-1.10.1.custom.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery-ui-1.10.1.custom.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.backstretch.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.backstretch.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.blockui.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.blockui.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.bootpag.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.bootpag.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.bootstrap.wizard.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.bootstrap.wizard.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.countdown.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.countdown.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.dataTables.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.dataTables.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.dataTables.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.dataTables.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.easy-pie-chart.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.easy-pie-chart.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.fancybox.pack.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.fancybox.pack.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.fileupload-fp.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.fileupload-fp.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.fileupload-ui.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.fileupload-ui.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.fileupload.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.fileupload.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.flot.crosshair.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.flot.crosshair.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.flot.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.flot.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.flot.pie.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.flot.pie.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.flot.resize.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.flot.resize.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.flot.stack.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.flot.stack.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.gritter.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.gritter.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.iframe-transport.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.iframe-transport.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.input-ip-address-control-1.0.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.input-ip-address-control-1.0.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.inputmask.bundle.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.inputmask.bundle.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.knob.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.knob.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.multi-select.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.multi-select.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.nestable.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.nestable.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.pulsate.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.pulsate.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.slimscroll.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.slimscroll.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.tagsinput.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.tagsinput.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.toggle.buttons.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.toggle.buttons.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.ui.widget.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.ui.widget.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.uniform.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.uniform.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.validate.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.validate.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\jquery.xdr-transport.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.xdr-transport.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\load-image.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/load-image.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\lock.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/lock.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\login-soft.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/login-soft.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\login.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/login.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\maps-google.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/maps-google.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\maps-vector.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/maps-vector.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\portlet-draggable.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/portlet-draggable.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\respond.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/respond.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\respond.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/respond.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\search.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/search.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\select2.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/select2.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\table-advanced.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/table-advanced.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\table-editable.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/table-editable.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\table-managed.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/table-managed.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\tmpl.min.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/tmpl.min.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\ui-general.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/ui-general.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\ui-jqueryui.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/ui-jqueryui.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\ui-modals.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/ui-modals.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\ui-nestable.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/ui-nestable.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\ui-sliders.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/ui-sliders.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\ui-tree.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/ui-tree.js" />
+      <change type="MOVED" beforePath="E:\Asx-e\public\assets\js\wysihtml5-0.3.0.js" afterPath="$PROJECT_DIR$/public/assets/admin/js/wysihtml5-0.3.0.js" />
     </list>
     <ignored path="Asx-e.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,14 +398,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/admin.php">
+      <file leaf-file-name="default.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/default.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="98" column="37" selection-start-line="98" selection-start-column="37" selection-end-line="98" selection-end-column="37" />
-              <folding>
-                <element signature="e#6#27#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-12.892858">
+              <caret line="70" column="48" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -51,20 +411,20 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.392857">
-              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+            <state vertical-scroll-proportion="-8.821428">
+              <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php">
+      <file leaf-file-name="NotificationController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/NotificationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.428572">
-              <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.6329866">
+              <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
               <folding>
-                <element signature="e#44#72#0#PHP" expanded="true" />
+                <element signature="e#46#74#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,41 +433,9 @@
       <file leaf-file-name="autoload_classmap.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="94" selection-start-line="14" selection-start-column="94" selection-end-line="14" selection-end-column="94" />
+            <state vertical-scroll-proportion="-7.714286">
+              <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nav.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/nav.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sidebar.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/sidebar.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.107143">
-              <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/default.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29713604">
-              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -115,34 +443,48 @@
       <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+            <state vertical-scroll-proportion="-145.21428">
+              <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+              <caret line="86" column="74" selection-start-line="86" selection-start-column="74" selection-end-line="86" selection-end-column="74" />
+              <caret line="99" column="76" selection-start-line="99" selection-start-column="76" selection-end-line="99" selection-end-column="76" />
+              <caret line="112" column="76" selection-start-line="112" selection-start-column="76" selection-end-line="112" selection-end-column="76" />
+              <caret line="214" column="53" selection-start-line="214" selection-start-column="53" selection-end-line="214" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="helpers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/helpers.php">
+      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0">
-              <caret line="60" column="31" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="31" />
-              <folding />
+            <state vertical-scroll-proportion="-23.071428">
+              <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+              <folding>
+                <element signature="e#44#72#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cookie.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Cookie.php">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.75">
-              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+            <state vertical-scroll-proportion="-18.607143">
+              <caret line="1172" column="0" selection-start-line="1172" selection-start-column="0" selection-end-line="1172" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -172,19 +514,29 @@
         <option value="$PROJECT_DIR$/resources/views/admin/b.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/foot.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/head.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/header.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
         <option value="$PROJECT_DIR$/config/admin.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/dController.php" />
         <option value="$PROJECT_DIR$/resources/views/errors/404.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/LayoutsController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/nav.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/header.blade.php" />
+        <option value="$PROJECT_DIR$/public/assets/admin/js/index.js" />
+        <option value="$PROJECT_DIR$/public/assets/admin/js/app.js" />
+        <option value="$PROJECT_DIR$/public/assets/admin/js/coming-soon.js" />
+        <option value="$PROJECT_DIR$/public/assets/admin/js/form-components.js" />
+        <option value="$PROJECT_DIR$/public/assets/admin/js/form-wizard.js" />
+        <option value="$PROJECT_DIR$/public/assets/admin/js/lock.js" />
+        <option value="$PROJECT_DIR$/public/assets/admin/js/login-soft.js" />
+        <option value="$PROJECT_DIR$/public/assets/admin/js/ui-general.js" />
+        <option value="$PROJECT_DIR$/public/assets/admin/js/global.js" />
         <option value="$PROJECT_DIR$/resources/views/admin/default.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/NotificationController.php" />
       </list>
     </option>
   </component>
@@ -207,10 +559,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="width" value="1440" />
+    <option name="height" value="860" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -236,7 +586,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1039,6 +1388,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1056,6 +1406,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\Asx-e\app\Http\Controllers\Admin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Asx-e\public\assets\admin" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Web Application.test">
@@ -1128,15 +1481,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="860" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24908425" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25289854" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32971016" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32739726" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281075" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1147,7 +1501,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3281075" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39973083" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1177,101 +1530,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="133" column="5" selection-start-line="133" selection-start-column="5" selection-end-line="133" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.375">
-          <caret line="120" column="28" selection-start-line="120" selection-start-column="28" selection-end-line="120" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/less/app.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/validation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.93303573">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39732143">
-          <caret line="1309" column="38" selection-start-line="1309" selection-start-column="30" selection-end-line="1309" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/ModelNotFoundException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16964285">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.689655">
-          <caret line="541" column="33" selection-start-line="541" selection-start-column="25" selection-end-line="541" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.124814264">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.857142">
-          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.4059098">
-          <caret line="238" column="25" selection-start-line="238" selection-start-column="15" selection-end-line="238" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.87869364">
-          <caret line="274" column="5" selection-start-line="274" selection-start-column="5" selection-end-line="274" selection-end-column="5" />
-          <folding>
-            <element signature="e#35#47#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.9806836">
-          <caret line="18" column="35" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.363919">
@@ -1440,13 +1698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.607143">
-          <caret line="1177" column="5" selection-start-line="1177" selection-start-column="5" selection-end-line="1177" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/errors/404.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.0">
@@ -1454,28 +1705,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="98" column="37" selection-start-line="98" selection-start-column="37" selection-end-line="98" selection-end-column="37" />
-          <folding>
-            <element signature="e#6#27#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.1266055">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="94" selection-start-line="14" selection-start-column="94" selection-end-line="14" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1487,41 +1720,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.392857">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/nav.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.107143">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="60" column="31" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="31" />
           <folding />
         </state>
@@ -1529,15 +1730,181 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Cookie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.75">
+        <state vertical-scroll-proportion="0.0">
           <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/admin/css/themes/blue.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/nav.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.689655">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6034484">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/admin/js/login-soft.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5">
+          <caret line="191" column="30" selection-start-line="191" selection-start-column="30" selection-end-line="191" selection-end-column="30" />
+          <caret line="192" column="30" selection-start-line="192" selection-start-column="30" selection-end-line="192" selection-end-column="30" />
+          <caret line="193" column="30" selection-start-line="193" selection-start-column="30" selection-end-line="193" selection-end-column="30" />
+          <caret line="194" column="30" selection-start-line="194" selection-start-column="30" selection-end-line="194" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/admin/js/lock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38311687">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/admin/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1645021">
+          <caret line="613" column="63" selection-start-line="613" selection-start-column="63" selection-end-line="613" selection-end-column="63" />
+          <caret line="725" column="40" selection-start-line="725" selection-start-column="40" selection-end-line="725" selection-end-column="40" />
+          <caret line="750" column="40" selection-start-line="750" selection-start-column="40" selection-end-line="750" selection-end-column="40" />
+          <caret line="786" column="38" selection-start-line="786" selection-start-column="38" selection-end-line="786" selection-end-column="38" />
+          <caret line="821" column="38" selection-start-line="821" selection-start-column="38" selection-end-line="821" selection-end-column="38" />
+          <caret line="864" column="38" selection-start-line="864" selection-start-column="38" selection-end-line="864" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/admin/js/ui-general.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5064935">
+          <caret line="81" column="11" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/admin/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9177489">
+          <caret line="661" column="56" selection-start-line="661" selection-start-column="56" selection-end-line="661" selection-end-column="56" />
+          <caret line="787" column="54" selection-start-line="787" selection-start-column="54" selection-end-line="787" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/admin/js/bootstrap-tree.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2638889">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/admin/js/coming-soon.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41125542">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/admin/js/form-components.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="335" column="55" selection-start-line="335" selection-start-column="55" selection-end-line="335" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/admin/js/form-fileupload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/admin/js/form-wizard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/admin/js/jquery.cookie.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/default.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.892858">
+          <caret line="70" column="48" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.607143">
+          <caret line="1172" column="0" selection-start-line="1172" selection-start-column="0" selection-end-line="1172" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/admin/js/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.10841655">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-145.21428">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <caret line="86" column="74" selection-start-line="86" selection-start-column="74" selection-end-line="86" selection-end-column="74" />
+          <caret line="99" column="76" selection-start-line="99" selection-start-column="76" selection-end-line="99" selection-end-column="76" />
+          <caret line="112" column="76" selection-start-line="112" selection-start-column="76" selection-end-line="112" selection-end-column="76" />
+          <caret line="214" column="53" selection-start-line="214" selection-start-column="53" selection-end-line="214" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.428572">
+        <state vertical-scroll-proportion="-23.071428">
           <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
           <folding>
             <element signature="e#44#72#0#PHP" expanded="true" />
@@ -1545,12 +1912,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/default.blade.php">
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29713604">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        <state vertical-scroll-proportion="-7.714286">
+          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.821428">
+          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/NotificationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6329866">
+          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#46#74#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

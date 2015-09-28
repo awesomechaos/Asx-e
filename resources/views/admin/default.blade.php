@@ -15,22 +15,22 @@
     @endforelse
 
     @section('style')
-        {!! Html::style('assets/css/bootstrap.min.css') !!}
-        {!! Html::style('assets/css/bootstrap-responsive.min.css') !!}
-        {!! Html::style('assets/css/font-awesome.min.css') !!}
-        {!! Html::style('assets/css/style-metro.css') !!}
-        {!! Html::style('assets/css/style.css') !!}
-        {!! Html::style('assets/css/style-responsive.css') !!}
-        {!! Html::style('assets/css/themes/'.$head['style_color'].'.css', array('id' => 'style_color')) !!}
-        {!! Html::style('assets/css/uniform.default.css') !!}
+        {!! Html::style('assets/admin/css/bootstrap.min.css') !!}
+        {!! Html::style('assets/admin/css/bootstrap-responsive.min.css') !!}
+        {!! Html::style('assets/admin/css/font-awesome.min.css') !!}
+        {!! Html::style('assets/admin/css/style-metro.css') !!}
+        {!! Html::style('assets/admin/css/style.css') !!}
+        {!! Html::style('assets/admin/css/style-responsive.css') !!}
+        {!! Html::style('assets/admin/css/themes/'.$head['style_color'].'.css', array('id' => 'style_color')) !!}
+        {!! Html::style('assets/admin/css/uniform.default.css') !!}
+        {!! Html::style('assets/admin/css/jquery.gritter.css') !!}
     @show
 
-    {!! Html::style('assets/image/favicon.ico', array('rel' => 'shortcut icon')) !!}
+    {!! Html::style('assets/admin/image/favicon.ico', array('rel' => 'shortcut icon')) !!}
 
 </head>
 <body class="page-header-fixed page-footer-fixed">
     @include('admin.header')
-    {{ Cookie::get('laravel_session') }}
     <div class="page-container">
         @include('admin.sidebar')
         <div class="page-content">
@@ -68,14 +68,20 @@
             </div>
         </div>
 
-        {!! Html::script('http://apps.bdimg.com/libs/jquery/1.10.1/jquery.min.js', array('type' => 'text/javascript')) !!}
-        {!! Html::script('assets/js/jquery-ui-1.10.1.custom.min.js') !!}
+        {!! Html::script('assets/admin/js/global.js') !!}
+        {!! Html::script('http://apps.bdimg.com/libs/jquery/1.10.1/jquery.min.js') !!}
+        {!! Html::script('assets/admin/js/jquery-ui-1.10.1.custom.min.js') !!}
         {!! Html::script('http://apps.bdimg.com/libs/bootstrap/2.3.1/js/bootstrap.min.js') !!}
-        {!! Html::script('assets/js/jquery-migrate-1.2.1.min.js') !!}
-        {!! Html::script('assets/js/jquery.slimscroll.min.js') !!}
-        {!! Html::script('assets/js/jquery.blockui.min.js') !!}
-        {!! Html::script('assets/js/jquery.cookie.min.js') !!}
-        {!! Html::script('assets/js/jquery.uniform.min.js') !!}
+        {!! Html::script('assets/admin/js/jquery-migrate-1.2.1.min.js') !!}
+        {!! Html::script('assets/admin/js/jquery.slimscroll.min.js') !!}
+        {!! Html::script('assets/admin/js/jquery.blockui.min.js') !!}
+        {!! Html::script('assets/admin/js/jquery.cookie.min.js') !!}
+        {!! Html::script('assets/admin/js/jquery.uniform.min.js') !!}
+        {{--gritter.js为通知弹框--}}
+        {!! Html::script('assets/admin/js/jquery.gritter.js') !!}
+        <script type="text/javascript">
+            Glo.initIntro();
+        </script>
     @show
 
 </body>

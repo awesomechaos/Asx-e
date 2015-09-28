@@ -659,7 +659,7 @@ var App = function () {
 
         // handle theme colors
         var setColor = function (color) {
-            $('#style_color').attr("href", "assets/css/themes/" + color + ".css");
+            $('#style_color').attr("href", "assets/admin/css/themes/" + color + ".css");
             $.cookie('style_color', color, {expires: 365, path: "/"});                
         }
 
@@ -785,7 +785,7 @@ var App = function () {
         blockUI: function (el, centerY) {
             var el = jQuery(el); 
             el.block({
-                    message: '<img src="./assets/image/ajax-loading.gif" align="">',
+                    message: '<img src="./assets/admin/image/ajax-loading.gif" align="">',
                     centerY: centerY != undefined ? centerY : true,
                     css: {
                         top: '10%',

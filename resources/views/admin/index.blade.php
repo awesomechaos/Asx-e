@@ -3,11 +3,10 @@
 {{--添加当前页面需要加载的css--}}
 @section('style')
     @parent
-    {!! Html::style('assets/css/jquery.gritter.css') !!}
-    {!! Html::style('assets/css/daterangepicker.css') !!}
-    {!! Html::style('assets/css/fullcalendar.css') !!}
-    {!! Html::style('assets/css/jqvmap.css', array('media' => 'screen')) !!}
-    {!! Html::style('assets/css/jquery.easy-pie-chart.css', array('media' => 'screen')) !!}
+    {!! Html::style('assets/admin/css/daterangepicker.css') !!}
+    {!! Html::style('assets/admin/css/fullcalendar.css') !!}
+    {!! Html::style('assets/admin/css/jqvmap.css', array('media' => 'screen')) !!}
+    {!! Html::style('assets/admin/css/jquery.easy-pie-chart.css', array('media' => 'screen')) !!}
 @stop
 
 @section('container')
@@ -92,7 +91,7 @@
                     </div>
                     <div class="portlet-body">
                         <div id="site_statistics_loading">
-                            <img src="assets/image/loading.gif" alt="loading" />
+                            <img src="assets/admin/image/loading.gif" alt="loading" />
                         </div>
                         <div id="site_statistics_content" class="hide">
                             <div id="site_statistics" class="chart"></div>
@@ -115,7 +114,7 @@
                     </div>
                     <div class="portlet-body">
                         <div id="site_activities_loading">
-                            <img src="assets/image/loading.gif" alt="loading" />
+                            <img src="assets/admin/image/loading.gif" alt="loading" />
                         </div>
                         <div id="site_activities_content" class="hide">
                             <div id="site_activities" style="height:100px;"></div>
@@ -138,7 +137,7 @@
                     </div>
                     <div class="portlet-body">
                         <div id="load_statistics_loading">
-                            <img src="assets/image/loading.gif" alt="loading" />
+                            <img src="assets/admin/image/loading.gif" alt="loading" />
                         </div>
                         <div id="load_statistics_content" class="hide">
                             <div id="load_statistics" style="height:108px;"></div>
@@ -875,7 +874,7 @@
                                     <div class="scroller" data-height="290px" data-always-visible="1" data-rail-visible1="1">
                                         <div class="row-fluid">
                                             <div class="span6 user-info">
-                                                <img alt="" src="assets/image/avatar.png" />
+                                                <img alt="" src="assets/admin/image/avatar.png" />
                                                 <div class="details">
                                                     <div>
                                                         <a href="#">Robert Nilson</a>
@@ -885,7 +884,7 @@
                                                 </div>
                                             </div>
                                             <div class="span6 user-info">
-                                                <img alt="" src="assets/image/avatar.png" />
+                                                <img alt="" src="assets/admin/image/avatar.png" />
                                                 <div class="details">
                                                     <div>
                                                         <a href="#">Lisa Miller</a>
@@ -897,7 +896,7 @@
                                         </div>
                                         <div class="row-fluid">
                                             <div class="span6 user-info">
-                                                <img alt="" src="assets/image/avatar.png" />
+                                                <img alt="" src="assets/admin/image/avatar.png" />
                                                 <div class="details">
                                                     <div>
                                                         <a href="#">Eric Kim</a>
@@ -907,7 +906,7 @@
                                                 </div>
                                             </div>
                                             <div class="span6 user-info">
-                                                <img alt="" src="assets/image/avatar.png" />
+                                                <img alt="" src="assets/admin/image/avatar.png" />
                                                 <div class="details">
                                                     <div>
                                                         <a href="#">Lisa Miller</a>
@@ -919,7 +918,7 @@
                                         </div>
                                         <div class="row-fluid">
                                             <div class="span6 user-info">
-                                                <img alt="" src="assets/image/avatar.png" />
+                                                <img alt="" src="assets/admin/image/avatar.png" />
                                                 <div class="details">
                                                     <div>
                                                         <a href="#">Eric Kim</a>
@@ -929,7 +928,7 @@
                                                 </div>
                                             </div>
                                             <div class="span6 user-info">
-                                                <img alt="" src="assets/image/avatar.png" />
+                                                <img alt="" src="assets/admin/image/avatar.png" />
                                                 <div class="details">
                                                     <div>
                                                         <a href="#">Lisa Miller</a>
@@ -941,7 +940,7 @@
                                         </div>
                                         <div class="row-fluid">
                                             <div class="span6 user-info">
-                                                <img alt="" src="assets/image/avatar.png" />
+                                                <img alt="" src="assets/admin/image/avatar.png" />
                                                 <div class="details">
                                                     <div><a href="#">Eric Kim</a> <span class="label label-info">Pending</span>
                                                     </div>
@@ -949,7 +948,7 @@
                                                 </div>
                                             </div>
                                             <div class="span6 user-info">
-                                                <img alt="" src="assets/image/avatar.png" />
+                                                <img alt="" src="assets/admin/image/avatar.png" />
                                                 <div class="details">
                                                     <div>
                                                         <a href="#">Lisa Miller</a>
@@ -961,7 +960,7 @@
                                         </div>
                                         <div class="row-fluid">
                                             <div class="span6 user-info">
-                                                <img alt="" src="assets/image/avatar.png" />
+                                                <img alt="" src="assets/admin/image/avatar.png" />
                                                 <div class="details">
                                                     <div><a href="#">Eric Kim</a> <span class="label label-info">Pending</span>
                                                     </div>
@@ -969,7 +968,7 @@
                                                 </div>
                                             </div>
                                             <div class="span6 user-info">
-                                                <img alt="" src="assets/image/avatar.png" />
+                                                <img alt="" src="assets/admin/image/avatar.png" />
                                                 <div class="details">
                                                     <div>
                                                         <a href="#">Lisa Miller</a>
@@ -981,7 +980,7 @@
                                         </div>
                                         <div class="row-fluid">
                                             <div class="span6 user-info">
-                                                <img alt="" src="assets/image/avatar.png" />
+                                                <img alt="" src="assets/admin/image/avatar.png" />
                                                 <div class="details">
                                                     <div>
                                                         <a href="#">Eric Kim</a>
@@ -991,7 +990,7 @@
                                                 </div>
                                             </div>
                                             <div class="span6 user-info">
-                                                <img alt="" src="assets/image/avatar.png" />
+                                                <img alt="" src="assets/admin/image/avatar.png" />
                                                 <div class="details">
                                                     <div>
                                                         <a href="#">Lisa Miller</a>
@@ -1042,7 +1041,7 @@
                         <div class="scroller" data-height="435px" data-always-visible="1" data-rail-visible1="1">
                             <ul class="chats">
                                 <li class="in">
-                                    <img class="avatar" alt="" src="assets/image/avatar1.jpg" />
+                                    <img class="avatar" alt="" src="assets/admin/image/avatar1.jpg" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="#" class="name">Bob Nilson</a>
@@ -1053,7 +1052,7 @@
                                     </div>
                                 </li>
                                 <li class="out">
-                                    <img class="avatar" alt="" src="assets/image/avatar2.jpg" />
+                                    <img class="avatar" alt="" src="assets/admin/image/avatar2.jpg" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="#" class="name">Lisa Wong</a>
@@ -1064,7 +1063,7 @@
                                     </div>
                                 </li>
                                 <li class="in">
-                                    <img class="avatar" alt="" src="assets/image/avatar1.jpg" />
+                                    <img class="avatar" alt="" src="assets/admin/image/avatar1.jpg" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="#" class="name">Bob Nilson</a>
@@ -1075,7 +1074,7 @@
                                     </div>
                                 </li>
                                 <li class="out">
-                                    <img class="avatar" alt="" src="assets/image/avatar3.jpg" />
+                                    <img class="avatar" alt="" src="assets/admin/image/avatar3.jpg" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="#" class="name">Richard Doe</a>
@@ -1086,7 +1085,7 @@
                                     </div>
                                 </li>
                                 <li class="in">
-                                    <img class="avatar" alt="" src="assets/image/avatar3.jpg" />
+                                    <img class="avatar" alt="" src="assets/admin/image/avatar3.jpg" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="#" class="name">Richard Doe</a>
@@ -1097,7 +1096,7 @@
                                     </div>
                                 </li>
                                 <li class="out">
-                                    <img class="avatar" alt="" src="assets/image/avatar1.jpg" />
+                                    <img class="avatar" alt="" src="assets/admin/image/avatar1.jpg" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="#" class="name">Bob Nilson</a>
@@ -1108,7 +1107,7 @@
                                     </div>
                                 </li>
                                 <li class="in">
-                                    <img class="avatar" alt="" src="assets/image/avatar3.jpg" />
+                                    <img class="avatar" alt="" src="assets/admin/image/avatar3.jpg" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="#" class="name">Richard Doe</a>
@@ -1120,7 +1119,7 @@
                                     </div>
                                 </li>
                                 <li class="out">
-                                    <img class="avatar" alt="" src="assets/image/avatar1.jpg" />
+                                    <img class="avatar" alt="" src="assets/admin/image/avatar1.jpg" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="#" class="name">Bob Nilson</a>
@@ -1151,18 +1150,17 @@
 
 @section('foot')
     @parent
-    {!! Html::script('assets/js/bootstrap-tag.js') !!}
-    <script src="assets/js/jquery.flot.js" type="text/javascript"></script>
-    <script src="assets/js/jquery.flot.resize.js" type="text/javascript"></script>
-    <script src="assets/js/jquery.pulsate.min.js" type="text/javascript"></script>
-    <script src="assets/js/date.js" type="text/javascript"></script>
-    <script src="assets/js/daterangepicker.js" type="text/javascript"></script>
-    <script src="assets/js/jquery.gritter.js" type="text/javascript"></script>
-    <script src="assets/js/fullcalendar.min.js" type="text/javascript"></script>
-    <script src="assets/js/jquery.easy-pie-chart.js" type="text/javascript"></script>
-    <script src="assets/js/jquery.sparkline.min.js" type="text/javascript"></script>
-    {!! Html::script('assets/js/app.js') !!}
-    {!! Html::script('assets/js/index.js') !!}
+    {!! Html::script('assets/admin/js/bootstrap-tag.js') !!}
+    <script src="assets/admin/js/jquery.flot.js" type="text/javascript"></script>
+    <script src="assets/admin/js/jquery.flot.resize.js" type="text/javascript"></script>
+    <script src="assets/admin/js/jquery.pulsate.min.js" type="text/javascript"></script>
+    <script src="assets/admin/js/date.js" type="text/javascript"></script>
+    <script src="assets/admin/js/daterangepicker.js" type="text/javascript"></script>
+    <script src="assets/admin/js/fullcalendar.min.js" type="text/javascript"></script>
+    <script src="assets/admin/js/jquery.easy-pie-chart.js" type="text/javascript"></script>
+    <script src="assets/admin/js/jquery.sparkline.min.js" type="text/javascript"></script>
+    {!! Html::script('assets/admin/js/app.js') !!}
+    {!! Html::script('assets/admin/js/index.js') !!}
     <script type="text/javascript">
         jQuery(document).ready(function() {
             App.init(); // initlayout and core plugins
@@ -1172,7 +1170,6 @@
             Index.initChat();
             Index.initMiniCharts();
             Index.initDashboardDaterange();
-            Index.initIntro();
         });
     </script>
 @stop
