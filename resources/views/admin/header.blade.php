@@ -3,12 +3,12 @@
     <div class="navbar-inner">
         <div class="container-fluid">
             <!-- BEGIN LOGO -->
-            <a class="brand" href="index.html">
+            <a class="brand" href="/">
                 <img src="assets/admin/image/logo.png" alt="logo"/>
             </a>
             <!-- END LOGO -->
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-            <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+            <a href="javascript:void(0);" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
                 <img src="assets/admin/image/menu-toggler.png" alt="" />
             </a>
             <!-- END RESPONSIVE MENU TOGGLER -->
@@ -16,13 +16,13 @@
             <ul class="nav pull-right">
                 <!-- BEGIN NOTIFICATION DROPDOWN -->
                 <li class="dropdown" id="header_notification_bar">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="icon-warning-sign"></i>
-                        <span class="badge">6</span>
+                        <span class="badge"></span>
                     </a>
                     <ul class="dropdown-menu extended notification">
                         <li>
-                            <p>You have 14 new notifications</p>
+                            <p id="notice_title"></p>
                         </li>
                         <li>
                             <a href="#">
@@ -80,7 +80,7 @@
                     </a>
                     <ul class="dropdown-menu extended inbox">
                         <li>
-                            <p>You have 12 new messages</p>
+                            <p id="message_title">You have 12 new messages</p>
                         </li>
                         <li>
                             <a href="inbox.html?a=view">

@@ -1815,6 +1815,7 @@ Custom icon buttons
   border-bottom: 1px solid #f4f4f4 !important;
   font-size: 12px;
   text-shadow: none;
+  overflow-x: hidden;
 }
 
 .dropdown-menu.extended li:first-child a {
@@ -1847,7 +1848,7 @@ Custom icon buttons
 }
 
 .dropdown-menu.notification li > a > .label i {
-  text-align: center !important;
+  text-align: justify !important;
 }
 
 .dropdown-menu.notification li a .time {

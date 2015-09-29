@@ -20,25 +20,100 @@ class NotificationController extends Controller
 
     /**
      * Response to Ajax Notification request
-     * @return array
+     * 注意事项,回复消息,未完成任务
+     * @return json
+     */
+    public function getNotice()
+    {
+        //asx:需要添加验证
+        $arr = array(
+            'notice' => array(
+                array(
+                    'icon' => 'icon-bolt',
+                    'type' => 'info',
+                    'content' => 'yiiiihahahahah',
+                    'time' => '22',
+                ),
+                array(
+                    'icon' => 'icon-bolt',
+                    'type' => 'info',
+                    'content' => 'yiiiihahahahah',
+                    'time' => '22',
+                ),
+            ),
+            'message' => array(),
+            'task'    => array(),
+        );
+
+        return json_encode($arr);
+    }
+
+
+    /**
+     * Response to Ajax Message request
+     * 右下角弹出的消息框
+     * @return json
      */
     public function getMessage()
     {
         //asx:需要添加验证
+        //asx:配置文件中添加消息停留时间
         $arr = array(
             array(
             'title'  => 'lalla!',
             'text'   => 'Metronic allows you to easily customize the theme colors and layout settings.',
             'image'  => '',
-            'sticky' => 'false',
-            'time'   => '5',
+//            'sticky' => '',
+            'time'   => '3000',
             ),
             array(
                 'title'  => 'hhoho',
                 'text'   => 'Metronic allows you to easily customize the theme colors and layout settings.',
                 'image'  => '',
-                'sticky' => 'false',
-                'time'   => '5',
+//                'sticky' => '',
+                'time'   => '3000',
+            ),
+            array(
+                'title'  => 'hhoho',
+                'text'   => 'Metronic allows you to easily customize the theme colors and layout settings.',
+                'image'  => '',
+//                'sticky' => '',
+                'time'   => '3000',
+            ),
+            array(
+                'title'  => 'hhoho',
+                'text'   => 'Metronic allows you to easily customize the theme colors and layout settings.',
+                'image'  => '',
+//                'sticky' => '',
+                'time'   => '3000',
+            ),
+            array(
+                'title'  => 'hhoho',
+                'text'   => 'Metronic allows you to easily customize the theme colors and layout settings.',
+                'image'  => '',
+//                'sticky' => '',
+                'time'   => '3000',
+            ),
+            array(
+                'title'  => 'hhoho',
+                'text'   => 'Metronic allows you to easily customize the theme colors and layout settings.',
+                'image'  => '',
+                'sticky' => 'true',
+                'time'   => '3000',
+            ),
+            array(
+                'title'  => 'hhoho',
+                'text'   => 'Metronic allows you to easily customize the theme colors and layout settings.',
+                'image'  => '',
+//                'sticky' => '',
+                'time'   => '3000',
+            ),
+            array(
+                'title'  => 'hhoho',
+                'text'   => 'Metronic allows you to easily customize the theme colors and layout settings.',
+                'image'  => '',
+//                'sticky' => '',
+                'time'   => '3000',
             ),
         );
         return json_encode($arr);

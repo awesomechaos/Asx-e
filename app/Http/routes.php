@@ -19,8 +19,9 @@ Route::group(['namespace' => 'Admin'], function()
 {
     // Controllers Within The "App\Http\Controllers\Admin" Namespace
 
-    // Notification
-    Route::get('/admin/notification', 'NotificationController@getMessage');
+    // Message
+    Route::get('/admin/message', 'NotificationController@getMessage');
+    Route::get('/admin/notification', 'NotificationController@getNotice');
     // 根据menu循环注册路由
     foreach ( Config::get('admin.menu') as $name => $k) {
         Route::get("/admin/{$name}", "{$name}Controller@i");
