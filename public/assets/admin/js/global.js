@@ -34,28 +34,86 @@ var Glo = function () {
             } else {
                 $('#header_notification_bar .badge').text(number);
                 $('#notice_title').text('You have '+ number +' new notifications');
-            setTimeout(function () {
-                $('#header_notification_bar').pulsate({
-                    color: "#66bce6",
-                    repeat: 3
+                //页面插入消息
+                $.each(data, function(i, n){
+                    $('#header_notification_bar li')
+                        .first().after(
+                                    '<li><a href="' +
+                                    data[i].href +
+                                    '"><span class = "label label-"' +
+                                    data[i].type +
+                                    '"><i class="' +
+                                    data[i].icon + 
+                                    '"></i></span> ' +
+                                    data[i].content +
+                                    ' <span class="time">' +
+                                    data[i].time + //asx:time处理下
+                                    '</span></a></li>');
                 });
-            }, 10000);
             }
         },
-        showMessage: function (data) {
+        showMsgInfo: function (data) {
             var number = data.length;
             if (number == 0) {
-                $('#message_title').text('You have no notification');
+                $('#message_title').text('You have no message');
                 return;
             } else {
-                $('#header_notification_bar .badge').text(number);
-                $('#message_title').text('You have '+ number +' new notifications');
-            setTimeout(function () {
-                $('#header_notification_bar').pulsate({
-                    color: "#66bce6",
-                    repeat: 3
+                $('#header_inbox_bar .badge').text(number);
+                $('#message_title').text('You have '+ number +' new messages');
+                //页面插入消息
+                $.each(data, function(i, n){
+                    $('#header_inbox_bar li')
+                        .first().after(
+                                    '<li><a href="' +
+                                    data[i].href +
+                                    '"><span class = "photo"><img src="' +
+                                    data[i].photo +
+                                    '"/></span><span class="subject"><span class="from">' +
+                                    data[i].from + 
+                                    '</span><span class="time">' +
+                                    data[i].time +
+                                    '</span></span><span class="message">' +
+                                    data[i].content + 
+                                    '</span></a></li>');
                 });
-            }, 10000);
+            }
+        },
+        showTask: function (data) {
+            var number = data.length;
+            if (number == 0) {
+                $('#task_title').text('You have no pending task');
+                return;
+            } else {
+                $('#header_task_bar .badge').text(number);
+                $('#task_title').text('You have '+ number +' pending tasks');
+                //页面插入消息
+                $.each(data, function(i, n){
+                    var color;
+                    console.log(typeof(parseInt(data[i])));
+                    if (parseInt(data[i].percent) < 30) {
+                    console.log('1');
+                        color = "progress-danger";
+                    } else if(parseInt(data[i].percent) < 70) {
+                    console.log('2');
+                        color = "progress-warning";
+                    } else {
+                    console.log('3');
+                        color = "progress-success";
+                    }
+                    $('#header_task_bar li')
+                        .first().after(
+                                    '<li><a href="' +
+                                    data[i].href +
+                                    '"><span class="task"><span class="desc">' +
+                                    data[i].content +
+                                    '</span><span class="percent">' +
+                                    data[i].percent + 
+                                    '%</span></span><span class="progress progress-striped active ' +
+                                    color +
+                                    '"><span style="width: ' + 
+                                    data[i].percent +
+                                    '%;" class="bar"></span></span></a></li>');
+                });
             }
         },
 
@@ -83,23 +141,9 @@ var Glo = function () {
             //上方消息通知
             $.getJSON('/admin/notification', function(result) {
                 Glo.showNotice(result.notice);
-                console.log(result.notice);
-                console.log(result.message);
-                console.log(result.task);
+                Glo.showMsgInfo(result.message);
+                Glo.showTask(result.task);
             });
-            
-            
-            setTimeout(function () {
-                var number = $('#header_inbox_bar .badge').text();
-                number = parseInt(number);
-                number = number + 2;
-                $('#header_inbox_bar .badge').text(number);
-                $('#header_inbox_bar').pulsate({
-                    color: "#dd5131",
-                    repeat: 5
-                });
-
-            }, 6000);
             
         }
 

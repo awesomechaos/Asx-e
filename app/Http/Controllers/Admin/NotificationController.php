@@ -32,17 +32,38 @@ class NotificationController extends Controller
                     'icon' => 'icon-bolt',
                     'type' => 'info',
                     'content' => 'yiiiihahahahah',
+                    'href' => '/aaa',//asx:可换成id拼接url
                     'time' => '22',
                 ),
                 array(
                     'icon' => 'icon-bolt',
                     'type' => 'info',
                     'content' => 'yiiiihahahahah',
+                    'href' => '/bbb',
                     'time' => '22',
                 ),
             ),
-            'message' => array(),
-            'task'    => array(),
+            'message' => array(
+                array(
+                    'href' => '/aa/ss',//asx:可换成id拼接url
+                    'photo' => 'assets/admin/image/avatar2.jpg',//asx:头像单独放文件夹
+                    'from' => 'Ian z',
+                    'content' => 'hahah',
+                    'time' => '32',
+                ),
+            ),
+            'task'    => array(
+                array(
+                    'href' => '/sds',//asx:可换成id拼接url
+                    'percent' => '60',
+                    'content' => 'test task',
+                ),
+                array(
+                    'href' => '/sds',
+                    'percent' => '80',
+                    'content' => 'tedsdsdt task',
+                ),
+            ),
         );
 
         return json_encode($arr);

@@ -7,3 +7,10 @@ E:\Asx-e\public\assets\admin\css\style-metro.css
 
 .label-info  .label-*
 中是小图标的背景颜色
+
+
+task:
+
+progress-success  绿色
+progress-danger 红色
+progress-warning 黄色

@@ -42,7 +42,10 @@ class AdminController extends Controller
     }
     public function i()
     {
+        //asx:下面这些变成类的数据成员，方法直接读
         $head = array();
+        $nav = array();
+        $me = array();
         $head['title'] = 'test';
         $head['isAdmin'] = true;
         $nav['pageName'] = 'Dashboard';
@@ -53,7 +56,9 @@ class AdminController extends Controller
         } else {
             $head['style_color'] = $_COOKIE['style_color'];
         }
-        return view('admin.index', compact('head','nav'));
+        $me['photo'] = 'assets/admin/image/avatar1.jpg';
+        $me['username'] = 'Ian z';
+        return view('admin.index', compact('head', 'nav', 'me'));
     }
     /**
      * Show the form for creating a new resource.
