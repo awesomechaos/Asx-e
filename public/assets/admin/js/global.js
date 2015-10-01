@@ -16,6 +16,8 @@ var Glo = function () {
                     text: data.text,
                     // (string | optional) the image to display on the left
                     image: data.image,
+                    // (string | optional) the url link
+                    url: data.href,
                     // (bool | optional) if you want it to fade out on its own or just sit there
                     sticky: Boolean(data.sticky),
                     // (int | optional) the time you want it to be alive for before fading out
@@ -27,7 +29,7 @@ var Glo = function () {
         
         //右上角消息提示
         showNotice: function (data) {
-            var number = data.length;
+            var number = data.length < 99 ? data.length : 99 ;
             if (number == 0) {
                 $('#notice_title').text('You have no notification');
                 return;
@@ -53,12 +55,13 @@ var Glo = function () {
             }
         },
         showMsgInfo: function (data) {
-            var number = data.length;
+            var number = data.length < 99 ? data.length : 99 ;
             if (number == 0) {
                 $('#message_title').text('You have no message');
                 return;
             } else {
                 $('#header_inbox_bar .badge').text(number);
+		        $('#message_box').append(' ('+ number +')');
                 $('#message_title').text('You have '+ number +' new messages');
                 //页面插入消息
                 $.each(data, function(i, n){
@@ -79,7 +82,7 @@ var Glo = function () {
             }
         },
         showTask: function (data) {
-            var number = data.length;
+            var number = data.length < 99 ? data.length : 99 ;
             if (number == 0) {
                 $('#task_title').text('You have no pending task');
                 return;
@@ -89,15 +92,11 @@ var Glo = function () {
                 //页面插入消息
                 $.each(data, function(i, n){
                     var color;
-                    console.log(typeof(parseInt(data[i])));
                     if (parseInt(data[i].percent) < 30) {
-                    console.log('1');
                         color = "progress-danger";
                     } else if(parseInt(data[i].percent) < 70) {
-                    console.log('2');
                         color = "progress-warning";
                     } else {
-                    console.log('3');
                         color = "progress-success";
                     }
                     $('#header_task_bar li')

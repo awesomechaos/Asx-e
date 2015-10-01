@@ -233,10 +233,10 @@ Gritter Notifications
   background-image: url(../../image/gritter-light.png) !important;
 }
 .gritter-item-wrapper a {
-  color: #18a5ed;
+  color: #FFFFFF;
 }
 .gritter-item-wrapper a:hover {
-  color: #0b6694;
+  color: #FFFFFF;
 }
 /* begin: boxed page */
 @media (min-width: 980px) {

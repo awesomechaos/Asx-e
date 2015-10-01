@@ -159,7 +159,7 @@ Sidebar toggler
   background-color: #fbfbfb !important;
 }
 .page-sidebar-closed .page-sidebar .sidebar-search.open .remove {  
-  background-image: url("../../image/sidebar-search-close-light.png");
+  background-image: url("../../image/sidebar-search-close.png");
 }
 /* sub menu bg color on hover menu item */
 .page-sidebar-closed ul.page-sidebar-menu > li:hover .sub-menu {
@@ -264,10 +264,10 @@ Gritter Notifications
   background-image: url(../../image/gritter-light.png) !important;
 }
 .gritter-item-wrapper a {
-  color: #18a5ed;
+  color: #FFFFFF;
 }
 .gritter-item-wrapper a:hover {
-  color: #0b6694;
+  color: #FFFFFF;
 }
 /* begin: boxed page */
 @media (min-width: 980px) {

@@ -73,10 +73,11 @@
                         <i class="icon-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu">
+                        {{--asx:添加正确url--}}
                         <li><a href="extra_profile.html"><i class="icon-user"></i> My Profile</a></li>
-                        <li><a href="page_calendar.html"><i class="icon-calendar"></i> My Calendar</a></li>
-                        <li><a href="inbox.html"><i class="icon-envelope"></i> My Inbox(3)</a></li>
+                        <li><a href="inbox.html" id="message_box"><i class="icon-envelope"></i> My Inbox</a></li>
                         <li><a href="#"><i class="icon-tasks"></i> My Tasks</a></li>
+                        <li><a href="page_calendar.html"><i class="icon-calendar"></i> My Calendar</a></li>
                         <li class="divider"></li>
                         <li><a href="extra_lock.html"><i class="icon-lock"></i> Lock Screen</a></li>
                         <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>

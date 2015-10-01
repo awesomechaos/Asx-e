@@ -58,6 +58,11 @@
 	margin:0;
 	word-wrap:break-word;
 }
+.gritter-item a {
+	padding:0;
+	margin:0;
+	word-wrap:break-word;
+}
 .gritter-close {
 	display:none;
 	position:absolute;

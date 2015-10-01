@@ -117,8 +117,9 @@ class NotificationController extends Controller
             ),
             array(
                 'title'  => 'hhoho',
-                'text'   => 'Metronic allows you to easily customize the theme colors and layout settings.',
+                'text'   => '粉丝发白U币覅百分比我爆发外边吧法师吧覅上班覅不发放比萨发不发覅我爸覅去',
                 'image'  => '',
+                'href'   => '/admin',
                 'sticky' => 'true',
                 'time'   => '3000',
             ),
