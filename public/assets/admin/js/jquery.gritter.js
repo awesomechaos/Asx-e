@@ -108,7 +108,7 @@
 			var title = params.title, 
 				text = params.text,
 				image = params.image || '',
-				url = params.href || '',
+				url = params.url || '#',
 				sticky = params.sticky || false,
 				item_class = params.class_name || $.gritter.options.class_name,
 				position = $.gritter.options.position,
