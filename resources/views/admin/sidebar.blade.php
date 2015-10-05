@@ -30,9 +30,9 @@
                         <span class="arrow"></span>
                     @endif
                 </a>
-                @if (count($arr['submenu']) != 0)
+                @if (count($arr['subMenu']) != 0)
                     <ul class="sub-menu">
-                        @foreach ($arr['submenu'] as $subarr)
+                        @foreach ($arr['subMenu'] as $subarr)
                         <li @if ($subarr['name'] == $nav['subPage']) class="active" @endif>
                             <a href="{{ $subarr['href'] }}">
                                 {{ $subarr['name'] }}</a>

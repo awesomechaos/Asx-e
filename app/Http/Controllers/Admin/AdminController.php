@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\AdminUser;
+use DB;
+use App\Model\Admin\Menu;
 use Cookie;
 class AdminController extends Controller
 {
@@ -60,6 +62,63 @@ class AdminController extends Controller
         $me['username'] = 'Ian z';
         return view('admin.index', compact('head', 'nav', 'me'));
     }
+
+    /**
+     * produce the admin config from database
+     * asx:提取到shell
+     */
+    public function getConfigFromDatabase()
+    {
+
+        $menus = DB::table('menus')
+            ->select('id', 'name', 'href', 'icon', 'controller')
+            ->where('isMainMenu', '=', 1)
+            ->where('isLock', '=', 0)
+            ->orderBy('weight', 'desc')
+            ->get();
+        $subMenus = array();
+        foreach ($menus as $menu) {
+            $tmp = DB::table('menus')
+                ->select('name', 'href', 'controller')
+                ->where('isMainMenu', '=', 0)
+                ->where('isLock', '=', 0)
+                ->where('mainMenuId', '=', $menu->id)
+                ->orderBy('weight', 'desc')
+                ->get();
+            if (count($tmp) != 0) {
+                $subMenus[$menu->id] = $tmp;
+            }
+        }
+        ob_start();
+        //menu start
+        echo "'menu' => array(".PHP_EOL;
+        foreach ($menus as $menu) {
+            echo "    '$menu->name'".' => array('.PHP_EOL;
+            echo "              'href' => '$menu->href',".PHP_EOL;
+            echo "              'icon' => '$menu->icon',".PHP_EOL;
+            echo "              'controller' => '$menu->controller',".PHP_EOL;
+            if (isset($subMenus[$menu->id])) {
+                echo "              'subMenu' => array(".PHP_EOL;
+                foreach ($subMenus[$menu->id] as $subMenu) {
+                    echo "                          array(".PHP_EOL;
+                    echo "                              'href' => '$subMenu->href',".PHP_EOL;
+                    echo "                              'name' => '$subMenu->name',".PHP_EOL;
+                    echo "                              'controller' => '$subMenu->controller',".PHP_EOL;
+                    echo "                          ),".PHP_EOL;
+                }
+                echo "               ),".PHP_EOL;
+            } else {
+                echo "              'subMenu' => array(),".PHP_EOL;
+            }
+            echo '    ),'.PHP_EOL;
+
+        }
+        echo "),".PHP_EOL;
+        //menu end
+        $menuArray = ob_get_clean();
+        file_put_contents('admin.php', $menuArray);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

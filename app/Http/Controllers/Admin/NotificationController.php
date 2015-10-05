@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Model\Admin\Notification_type;
 
 class NotificationController extends Controller
 {
@@ -26,6 +27,9 @@ class NotificationController extends Controller
     public function getNotice()
     {
         //asx:需要添加验证
+        //asx:notice type 从Config::get('admin.notification_type')
+        $types = Notification_type::find(1);
+        var_dump($types);
         $arr = array(
             'notice' => array(
                 array(
