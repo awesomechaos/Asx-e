@@ -8,36 +8,29 @@ return [
         'Dashboard' => array(
             'href' => 'javascript:void(0)',
             'icon' => 'icon-home',
-            'controller' => 'Admin',
+            'controller' => '',
+            'id' => '22',
             'subMenu' => array(),
         ),
         'Layouts' => array(
             'href' => 'javascript:void(0)',
             'icon' => 'icon-home',
             'controller' => '',
-            'subMenu' => array(
-                array(
-                    'href' => 'admin',
-                    'name' => 'Dad',
-                    'controller' => '',
-                ),
-                array(
-                    'href' => 'admin',
-                    'name' => 'Dadsss',
-                    'controller' => 's',
-                ),
-            ),
+            'id' => '1',
+            'subMenu' => array(),
         ),
         'UI Features' => array(
             'href' => 'javascript:void(0)',
             'icon' => 'icon-home',
             'controller' => '',
+            'id' => '5',
             'subMenu' => array(),
         ),
         'Form Stuff' => array(
             'href' => 'javascript:void(0)',
             'icon' => '',
             'controller' => '',
+            'id' => '6',
             'subMenu' => array(),
         ),
     ),
@@ -48,5 +41,4 @@ return [
         'failure' => 'default',
         'success' => 'success',
     ),
-]
-?>
+];

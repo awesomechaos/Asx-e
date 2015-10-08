@@ -1,13 +1,16 @@
 <?php
 namespace App\Http\Controllers\Admin;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\BaseContoller;
 use App\AdminUser;
 use DB;
 use App\Model\Admin\Menu;
+use App\Model\Admin\Authority_menu;
+use App\Model\Admin\User;
 use Cookie;
-class AdminController extends Controller
+class AdminController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -45,9 +48,6 @@ class AdminController extends Controller
     public function i()
     {
         //asx:下面这些变成类的数据成员，方法直接读
-        $head = array();
-        $nav = array();
-        $me = array();
         $head['title'] = 'test';
         $head['isAdmin'] = true;
         $nav['pageName'] = 'Dashboard';
@@ -60,16 +60,22 @@ class AdminController extends Controller
         }
         $me['photo'] = 'assets/admin/image/avatar1.jpg';
         $me['username'] = 'Ian z';
-        return view('admin.index', compact('head', 'nav', 'me'));
+        $menus = $this->menus;
+        return view('admin.index', compact('head', 'nav', 'me', 'menus'));
     }
 
     /**
      * produce the admin config from database
-     * asx:提取到shell
+     * asx:提取到shell或者移到管理员权限菜单
      */
     public function getConfigFromDatabase()
     {
-
+        $configs = DB::table('configs')
+            ->select('name', 'value')
+            ->get();
+        $notification_types = DB::table('notification_types')
+                                ->select('type', 'cssType')
+                                ->get();
         $menus = DB::table('menus')
             ->select('id', 'name', 'href', 'icon', 'controller')
             ->where('isMainMenu', '=', 1)
@@ -79,7 +85,7 @@ class AdminController extends Controller
         $subMenus = array();
         foreach ($menus as $menu) {
             $tmp = DB::table('menus')
-                ->select('name', 'href', 'controller')
+                ->select('id', 'name', 'href', 'controller')
                 ->where('isMainMenu', '=', 0)
                 ->where('isLock', '=', 0)
                 ->where('mainMenuId', '=', $menu->id)
@@ -90,33 +96,61 @@ class AdminController extends Controller
             }
         }
         ob_start();
+        echo "<?php".PHP_EOL;
+        echo "/*".PHP_EOL;
+        echo " * 后台管理的配置文件在此".PHP_EOL;
+        echo " * created at ".date('Y-m-d H:m:s')." by script".PHP_EOL;
+        echo " */".PHP_EOL;
+        echo "return [".PHP_EOL;
         //menu start
-        echo "'menu' => array(".PHP_EOL;
+        echo "    'menu' => array(".PHP_EOL;
         foreach ($menus as $menu) {
-            echo "    '$menu->name'".' => array('.PHP_EOL;
-            echo "              'href' => '$menu->href',".PHP_EOL;
-            echo "              'icon' => '$menu->icon',".PHP_EOL;
-            echo "              'controller' => '$menu->controller',".PHP_EOL;
+            echo "        '$menu->name'".' => array('.PHP_EOL;
+            echo "                  'href' => '$menu->href',".PHP_EOL;
+            echo "                  'icon' => '$menu->icon',".PHP_EOL;
+            echo "                  'controller' => '$menu->controller',".PHP_EOL;
+            echo "                  'id' => '$menu->id',".PHP_EOL;
             if (isset($subMenus[$menu->id])) {
-                echo "              'subMenu' => array(".PHP_EOL;
+                echo "                  'subMenu' => array(".PHP_EOL;
                 foreach ($subMenus[$menu->id] as $subMenu) {
-                    echo "                          array(".PHP_EOL;
-                    echo "                              'href' => '$subMenu->href',".PHP_EOL;
-                    echo "                              'name' => '$subMenu->name',".PHP_EOL;
-                    echo "                              'controller' => '$subMenu->controller',".PHP_EOL;
-                    echo "                          ),".PHP_EOL;
+                    echo "                              array(".PHP_EOL;
+                    echo "                                  'href' => '$subMenu->href',".PHP_EOL;
+                    echo "                                  'name' => '$subMenu->name',".PHP_EOL;
+                    echo "                                  'controller' => '$subMenu->controller',".PHP_EOL;
+                    echo "                                  'id' => '$subMenu->id',".PHP_EOL;
+                    echo "                              ),".PHP_EOL;
                 }
-                echo "               ),".PHP_EOL;
+                echo "                   ),".PHP_EOL;
             } else {
-                echo "              'subMenu' => array(),".PHP_EOL;
+                echo "                  'subMenu' => array(),".PHP_EOL;
             }
-            echo '    ),'.PHP_EOL;
-
+            echo '        ),'.PHP_EOL;
         }
-        echo "),".PHP_EOL;
+        echo "    ),".PHP_EOL;
         //menu end
+        //notification_types start
+        echo "    'notification_type' => array(".PHP_EOL;
+        foreach ($notification_types as $type) {
+            echo "        '$type->type' => '$type->cssType',".PHP_EOL;
+        }
+        echo "    ),".PHP_EOL;
+        //notification_types end
+        //configs start
+        echo "    'notification_type' => array(".PHP_EOL;
+        foreach ($configs as $config) {
+            echo "        '$config->name' => '$config->value',".PHP_EOL;
+        }
+        echo "    ),".PHP_EOL;
+        //configs end
+        echo "];";
         $menuArray = ob_get_clean();
         file_put_contents('admin.php', $menuArray);
+        $path =  '../../../../'.__DIR__ .'/config/admin.php';
+        $a = getcwd().'/admin.php';
+//        echo getcwd();
+        var_dump(pathinfo($path.'admin.php'));
+//        rename("getcwd().'/admin.php'", $path.'admin.php');
+        rename("$a", "$path");
     }
 
     /**

@@ -19,6 +19,7 @@
             <!-- END RESPONSIVE QUICK SEARCH FORM -->
         </li>
         @foreach (Config::get('admin.menu') as $name => $arr)
+            @if (in_array($arr['id'], $menus))
             <li class="@if ($name == $nav['pageName'])active @endif">
                 <a href="{{ $arr['href'] }}">
                     <i class="{{ $arr['icon'] }}"></i>
@@ -41,6 +42,7 @@
                     </ul>
                 @endif
             </li>
+            @endif
         @endforeach
     </ul>
     <!-- END SIDEBAR MENU -->

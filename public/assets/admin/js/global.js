@@ -42,7 +42,7 @@ var Glo = function () {
                         .first().after(
                                     '<li><a href="' +
                                     data[i].href +
-                                    '"><span class = "label label-"' +
+                                    '"><span class = "label label-' +
                                     data[i].type +
                                     '"><i class="' +
                                     data[i].icon + 
@@ -117,6 +117,7 @@ var Glo = function () {
         },
 
         //asx:need change 弹窗通知
+        //asx:考虑增加chrome通知
         initIntro: function () {
             if ($.cookie('intro_show')) {
                 return;
