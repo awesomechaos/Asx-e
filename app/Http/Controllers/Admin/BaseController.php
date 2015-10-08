@@ -30,7 +30,7 @@ class BaseController extends Controller
     {
         $menus = array();
         //asx:cookie获取accountid
-        $accountId = 2;
+        $accountId = 3;
         $user = User::find($accountId);
         $authorityMenus = $user->getAuthorityMenus;
         $authMenus = explode(',', $authorityMenus->menuIds);

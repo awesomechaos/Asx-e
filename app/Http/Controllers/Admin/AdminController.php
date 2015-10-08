@@ -66,7 +66,7 @@ class AdminController extends BaseController
 
     /**
      * produce the admin config from database
-     * asx:提取到shell或者移到管理员权限菜单
+     * asx:移到管理员权限菜单
      */
     public function getConfigFromDatabase()
     {
@@ -144,13 +144,7 @@ class AdminController extends BaseController
         //configs end
         echo "];";
         $menuArray = ob_get_clean();
-        file_put_contents('admin.php', $menuArray);
-        $path =  '../../../../'.__DIR__ .'/config/admin.php';
-        $a = getcwd().'/admin.php';
-//        echo getcwd();
-        var_dump(pathinfo($path.'admin.php'));
-//        rename("getcwd().'/admin.php'", $path.'admin.php');
-        rename("$a", "$path");
+        file_put_contents(config_path().'/config/admin.php', $menuArray);
     }
 
     /**
