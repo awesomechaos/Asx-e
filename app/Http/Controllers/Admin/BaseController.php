@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Model\Admin\User;
 use Auth;
+use Session;
 
 class BaseController extends Controller
 {
@@ -20,7 +21,6 @@ class BaseController extends Controller
     {
 //        Auth::attempt(['account' => $email, 'password' => $password]);
 //        Auth::logout();
-        $this->middleware('auth');
         $this->menus = $this->getMenus();
     }
 
@@ -43,6 +43,15 @@ class BaseController extends Controller
             $menus = array_intersect($userMenus, $authMenus);
         }
         return $menus;
+    }
+
+    /**
+     * Log out
+     */
+    public  function logout()
+    {
+        Auth::logout();
+        Session::flush();
     }
 
     /**
