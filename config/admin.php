@@ -1,7 +1,7 @@
 <?php
 /*
  * 后台管理的配置文件在此
- * created at 2015-10-08 22:10:22 by script
+ * created at 2015-10-09 15:10:25 by script
  */
 return [
     'menu' => array(
@@ -44,34 +44,6 @@ return [
                   'icon' => '',
                   'controller' => '',
                   'id' => '4',
-                  'subMenu' => array(),
-        ),
-        'Dashboard' => array(
-                  'href' => 'javascript:void(0)',
-                  'icon' => 'icon-home',
-                  'controller' => '',
-                  'id' => '7',
-                  'subMenu' => array(),
-        ),
-        'Layouts' => array(
-                  'href' => 'javascript:void(0)',
-                  'icon' => 'icon-home',
-                  'controller' => '',
-                  'id' => '8',
-                  'subMenu' => array(),
-        ),
-        'UI Features' => array(
-                  'href' => 'javascript:void(0)',
-                  'icon' => 'icon-home',
-                  'controller' => '',
-                  'id' => '9',
-                  'subMenu' => array(),
-        ),
-        'Form Stuff' => array(
-                  'href' => 'javascript:void(0)',
-                  'icon' => '',
-                  'controller' => '',
-                  'id' => '10',
                   'subMenu' => array(),
         ),
     ),

@@ -1,15 +1,11 @@
 <?php
 namespace App\Http\Controllers\Admin;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Admin\BaseContoller;
-use App\AdminUser;
 use DB;
 use App\Model\Admin\Menu;
-use App\Model\Admin\Authority_menu;
-use App\Model\Admin\User;
-use Cookie;
+use Auth;
 class AdminController extends BaseController
 {
     /**
@@ -49,7 +45,6 @@ class AdminController extends BaseController
     {
         //asx:下面这些变成类的数据成员，方法直接读
         $head['title'] = 'test';
-        $head['isAdmin'] = true;
         $nav['pageName'] = 'Dashboard';
         $nav['subPage'] = '';
         $nav['description'] = '';
@@ -61,6 +56,9 @@ class AdminController extends BaseController
         $me['photo'] = 'assets/admin/image/avatar1.jpg';
         $me['username'] = 'Ian z';
         $menus = $this->menus;
+        $email = 'ss';
+        $password = 'test';
+//        Auth::attempt(['account' => $email, 'password' => $password], 1);
         return view('admin.index', compact('head', 'nav', 'me', 'menus'));
     }
 
@@ -144,7 +142,7 @@ class AdminController extends BaseController
         //configs end
         echo "];";
         $menuArray = ob_get_clean();
-        file_put_contents(config_path().'/config/admin.php', $menuArray);
+        file_put_contents(config_path().'/admin.php', $menuArray);
     }
 
     /**

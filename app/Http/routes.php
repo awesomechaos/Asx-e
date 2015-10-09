@@ -15,7 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/admin', 'Admin\AdminController@i');
-//生成config
+Route::get('/admin/login', 'LoginController@admin');
+Route::get('/login', 'LoginController@index');
+//asx:生成config
 Route::get('/admin/config', 'Admin\AdminController@getConfigFromDatabase');
 Route::group(['namespace' => 'Admin'], function()
 {

@@ -4,15 +4,7 @@
     <title>{{ $head['title'] }}</title>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-
-    @if ($head['isAdmin'])
-        <meta name="robots" content="none" />
-    @else
-        <meta name="robots" content="all" />
-        <meta content="{{ $head['description'] }}" name="description" />
-        <meta content="{{ $head['author'] }}" name="author" />
-        <meta content="{{ $head['keywords'] }}" name="keywords" />
-    @endforelse
+    <meta name="robots" content="none" />
 
     @section('style')
         {!! Html::style('assets/admin/css/bootstrap.min.css') !!}

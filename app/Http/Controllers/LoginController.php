@@ -1,48 +1,35 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Model\Admin\User;
-use Auth;
 
-class BaseController extends Controller
+class LoginController extends Controller
 {
-
     /**
-     * Menus authorized to use
+     * Index login method with index view
      */
-    protected $menus = [];
-
-    public function __construct()
+    public function index()
     {
-//        Auth::attempt(['account' => $email, 'password' => $password]);
-//        Auth::logout();
-        $this->middleware('auth');
-        $this->menus = $this->getMenus();
+        //
+        view('index.login');
     }
 
     /**
-     * Get authority menus
-     *
-     * @return array
+     * Admin login method with admin view.
      */
-    public function getMenus()
+    public function admin()
     {
-        $menus = array();
-        $accountId = Auth::user()->id;
-        $user = User::find($accountId);
-        $authorityMenus = $user->getAuthorityMenus;
-        $authMenus = explode(',', $authorityMenus->menuIds);
-        if ($user->menu == 'all') {
-            $menus = $authMenus;
+        //
+        $head['title'] = 'test';
+        if (!isset($_COOKIE['style_color'])) {
+            $head['style_color'] = 'default';
         } else {
-            $userMenus = explode(',', $user->menu);
-            $menus = array_intersect($userMenus, $authMenus);
+            $head['style_color'] = $_COOKIE['style_color'];
         }
-        return $menus;
+        return view('admin.login', compact('head'));
     }
 
     /**
