@@ -27,8 +27,9 @@
     <!-- BEGIN LOGIN -->
     <div class="content">
         <!-- BEGIN LOGIN FORM -->
-        <form class="form-vertical login-form" action="index.html">
-            <h3 class="form-title">LOGIN</h3>
+        <form class="form-vertical login-form" action="" method="post">
+            {!! Form::token() !!}
+            <h3 class="form-title">Login Before Enjoy</h3>
             <div class="alert alert-error hide">
                 <button class="close" data-dismiss="alert"></button>
                 <span>Enter any username and password.</span>
@@ -39,7 +40,7 @@
                 <div class="controls">
                     <div class="input-icon left">
                         <i class="icon-user"></i>
-                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="Username" name="username"/>
+                        {!! Form::input('text', 'username', '', ['placeholder' => 'Username', 'class' => 'm-wrap placeholder-no-fix']) !!}
                     </div>
                 </div>
             </div>
@@ -48,13 +49,13 @@
                 <div class="controls">
                     <div class="input-icon left">
                         <i class="icon-lock"></i>
-                        <input class="m-wrap placeholder-no-fix" type="password" placeholder="Password" name="password"/>
+                        {!! Form::input('text', 'password', '', ['placeholder' => 'Password', 'class' => 'm-wrap placeholder-no-fix']) !!}
                     </div>
                 </div>
             </div>
             <div class="form-actions">
                 <label class="checkbox">
-                    <input type="checkbox" name="remember" value="1"/> Remember me
+                    {!! Form::input('checkbox', 'remember', '1') !!} Remember me
                 </label>
                 <button type="submit" class="btn green pull-right">
                     Login <i class="m-icon-swapright m-icon-white"></i>
@@ -62,15 +63,16 @@
             </div>
             <div class="forget-password">
                 <p>
-                    <a href="javascript:;" class="" id="forget-password">Forgot password ?</a>
+                    <a href="javascript:void(0);" id="forget-password">Forgot password ?</a>
                     or
-                    <a href="javascript:;" id="register-btn" class="">Just Register Now</a>
+                    <a href="javascript:void(0);" id="register-btn">Just Register Now !</a>
                 </p>
             </div>
         </form>
         <!-- END LOGIN FORM -->
         <!-- BEGIN FORGOT PASSWORD FORM -->
-        <form class="form-vertical forget-form" action="index.html">
+        <form class="form-vertical forget-form" action="">
+            {!! csrf_field() !!}
             <h3 class="">Forget Password ?</h3>
             <p>Enter your e-mail address below to reset your password.</p>
             <div class="control-group">
@@ -92,7 +94,8 @@
         </form>
         <!-- END FORGOT PASSWORD FORM -->
         <!-- BEGIN REGISTRATION FORM -->
-        <form class="form-vertical register-form" action="index.html">
+        <form class="form-vertical register-form" action="">
+            {!! csrf_field() !!}
             <h3 class="">Sign Up</h3>
             <p>Enter your account details below:</p>
             <div class="control-group">

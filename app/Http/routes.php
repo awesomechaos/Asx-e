@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/admin', ['middleware' => 'auth', 'uses' => 'Admin\AdminController@i']);
+Route::post('/admin/login', 'LoginController@login');
 Route::get('/admin/login', 'LoginController@admin');
 Route::get('/login', 'LoginController@index');
 //asx:生成config

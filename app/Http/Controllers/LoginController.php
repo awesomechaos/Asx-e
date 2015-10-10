@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests;
+use App\Http\Requests\LoginRequest;
 use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
@@ -32,6 +32,14 @@ class LoginController extends Controller
         return view('admin.login', compact('head'));
     }
 
+    /**
+     * @param Request $request
+     */
+    public function login(LoginRequest $request)
+    {
+        $input = $request->all();
+        var_dump($input);
+    }
     /**
      * Show the form for creating a new resource.
      *

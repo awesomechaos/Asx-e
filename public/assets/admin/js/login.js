@@ -13,7 +13,7 @@ var Login = function () {
 	                    required: true
 	                },
 	                password: {
-	                    required: true
+	                    required: false
 	                },
 	                remember: {
 	                    required: false
@@ -48,7 +48,9 @@ var Login = function () {
 	            },
 
 	            submitHandler: function (form) {
-	                window.location.href = "index.html";
+	                $('.login-form').attr('action', '/admin/login');
+                    //asx:ajax?
+	                $('.login-form').submit();
 	            }
 	        });
 
@@ -174,7 +176,7 @@ var Login = function () {
 	            },
 
 	            submitHandler: function (form) {
-	                window.location.href = "index.html";
+	                // window.location.href = "index.html";
 	            }
 	        });
 
