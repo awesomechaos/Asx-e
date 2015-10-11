@@ -10,6 +10,8 @@ return array(
     'CreateConfigsTableAsx' => $baseDir . '/database/migrations/2015_10_05_035718_create_configs_table_asx.php',
     'CreateMenusTableAsx' => $baseDir . '/database/migrations/2015_10_02_030724_create_menus_table_asx.php',
     'CreateNotificationTypesTableAsx' => $baseDir . '/database/migrations/2015_10_01_090958_create_notification_types_table_asx.php',
+    'CreatePasswordResetsTableAsx' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table_asx.php',
+    'CreateSessionsTable' => $baseDir . '/database/migrations/2015_10_10_133831_create_sessions_table.php',
     'CreateUsersTableAsx' => $baseDir . '/database/migrations/2015_10_22_022222_create_users_table_asx.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',

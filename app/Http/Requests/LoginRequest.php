@@ -24,8 +24,8 @@ class LoginRequest extends Request
     public function rules()
     {
         return [
-            'username' => 'required',
-            'password' => 'required'
+            'username' => 'required|exists:users,account|email|max:255',
+            'password' => 'required|min:4'
         ];
     }
 }

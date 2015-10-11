@@ -15,8 +15,8 @@ return [
     |            "memcached", "redis", "array"
     |
     */
-
-    'driver' => env('SESSION_DRIVER', 'cookie'),
+    //setting in file .env
+    'driver' => env('SESSION_DRIVER', 'file'),
 
     /*
     |--------------------------------------------------------------------------
@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'connection' => null,
+    'connection' => 'mysql',
 
     /*
     |--------------------------------------------------------------------------

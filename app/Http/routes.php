@@ -14,19 +14,24 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin', ['middleware' => 'auth', 'uses' => 'Admin\AdminController@i']);
-Route::post('/admin/login', 'LoginController@login');
-Route::get('/admin/login', 'LoginController@admin');
-Route::get('/login', 'LoginController@index');
+Route::get('admin', ['middleware' => 'auth', 'uses' => 'Admin\AdminController@i']);
+
+Route::post('admin/login', 'LoginController@login');
+Route::get('admin/login', 'LoginController@admin');
+Route::get('login', 'LoginController@index');
+Route::get('admin/logout', ['middleware' => 'auth', 'uses' => 'Admin\BaseController@logout']);
+Route::post('admin/findPassword', 'LoginController@findPassword');
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+
 //asx:生成config
-Route::get('/admin/config', 'Admin\AdminController@getConfigFromDatabase');
+Route::get('admin/config', 'Admin\AdminController@getConfigFromDatabase');
 Route::group(['namespace' => 'Admin'], function()
 {
     // Controllers Within The "App\Http\Controllers\Admin" Namespace
 
     // Message
-    Route::get('/admin/message', 'NotificationController@getMessage');
-    Route::get('/admin/notification', 'NotificationController@getNotice');
+    Route::get('admin/message', ['middleware' => 'auth', 'uses' => 'NotificationController@getMessage']);
+    Route::get('admin/notification', ['middleware' => 'auth', 'uses' => 'NotificationController@getNotice']);
     // 根据menu循环注册路由
     foreach ( Config::get('admin.menu') as $name => $val) {
         if ($val['controller'] != '') {

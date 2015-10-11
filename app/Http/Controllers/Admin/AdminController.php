@@ -56,9 +56,6 @@ class AdminController extends BaseController
         $me['photo'] = 'assets/admin/image/avatar1.jpg';
         $me['username'] = 'Ian z';
         $menus = $this->menus;
-        $email = 'ss';
-        $password = 'test';
-//        Auth::attempt(['account' => $email, 'password' => $password], 1);
         return view('admin.index', compact('head', 'nav', 'me', 'menus'));
     }
 

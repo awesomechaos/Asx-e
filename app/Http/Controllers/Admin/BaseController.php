@@ -21,7 +21,7 @@ class BaseController extends Controller
     {
 //        Auth::attempt(['account' => $email, 'password' => $password]);
 //        Auth::logout();
-        $this->menus = $this->getMenus();
+//        $this->menus = $this->getMenus();
     }
 
     /**
@@ -52,6 +52,7 @@ class BaseController extends Controller
     {
         Auth::logout();
         Session::flush();
+        return redirect()->action('LoginController@admin');
     }
 
     /**

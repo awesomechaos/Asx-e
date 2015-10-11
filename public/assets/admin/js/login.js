@@ -10,10 +10,11 @@ var Login = function () {
 	            focusInvalid: false, // do not focus the last invalid input
 	            rules: {
 	                username: {
-	                    required: true
+	                    required: true,
+						email: true
 	                },
 	                password: {
-	                    required: false
+	                    required: true
 	                },
 	                remember: {
 	                    required: false
@@ -30,7 +31,7 @@ var Login = function () {
 	            },
 
 	            invalidHandler: function (event, validator) { //display error alert on form submit   
-	                $('.alert-error', $('.login-form')).show();
+					
 	            },
 
 	            highlight: function (element) { // hightlight error inputs
@@ -49,7 +50,6 @@ var Login = function () {
 
 	            submitHandler: function (form) {
 	                $('.login-form').attr('action', '/admin/login');
-                    //asx:ajax?
 	                $('.login-form').submit();
 	            }
 	        });
@@ -57,7 +57,8 @@ var Login = function () {
 	        $('.login-form input').keypress(function (e) {
 	            if (e.which == 13) {
 	                if ($('.login-form').validate().form()) {
-	                    window.location.href = "index.html";
+	                    $('.login-form').attr('action', '/admin/login');
+						$('.login-form').submit();
 	                }
 	                return false;
 	            }
@@ -100,7 +101,21 @@ var Login = function () {
 	            },
 
 	            submitHandler: function (form) {
-	                window.location.href = "index.html";
+	                $.ajax({
+						type: "POST",
+						url: "/admin/findPassword",
+						data: { _token: $('.forget-form :input[name=_token]').val(), email: $('.forget-form :input[name=email]').val()},
+						dataType: "json",
+						success: function(msg){
+						console.log(msg);
+						},
+						error: function(msg) {
+							var m = msg.responseJSON;
+							console.log(m);
+							$('#forget-error span').html(m.email)
+							$('#forget-error').show();
+						}
+					});
 	            }
 	        });
 

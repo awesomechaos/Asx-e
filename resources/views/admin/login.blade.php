@@ -30,10 +30,14 @@
         <form class="form-vertical login-form" action="" method="post">
             {!! Form::token() !!}
             <h3 class="form-title">Login Before Enjoy</h3>
-            <div class="alert alert-error hide">
-                <button class="close" data-dismiss="alert"></button>
-                <span>Enter any username and password.</span>
-            </div>
+            @if (count($errors) > 0)
+                @foreach ($errors->all() as $error)
+                    <div class="alert alert-error" style="margin-bottom: 2px;">
+                        <button class="close" data-dismiss="alert"></button>
+                        <span>{{ $error }}</span>
+                    </div>
+                @endforeach
+            @endif
             <div class="control-group">
                 <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
                 <label class="control-label visible-ie8 visible-ie9">Username</label>
@@ -71,15 +75,19 @@
         </form>
         <!-- END LOGIN FORM -->
         <!-- BEGIN FORGOT PASSWORD FORM -->
-        <form class="form-vertical forget-form" action="">
+        <form class="form-vertical forget-form" action="" method="post">
             {!! csrf_field() !!}
             <h3 class="">Forget Password ?</h3>
             <p>Enter your e-mail address below to reset your password.</p>
+            <div class="alert alert-error hide" style="margin-bottom: 2px;" id="forget-error">
+                <button class="close" data-dismiss="alert"></button>
+                <span></span>
+            </div>
             <div class="control-group">
                 <div class="controls">
                     <div class="input-icon left">
                         <i class="icon-envelope"></i>
-                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="Email" name="email" />
+                        {!! Form::input('text', 'email', '', ['placeholder' => 'Email', 'class' => 'm-wrap placeholder-no-fix']) !!}
                     </div>
                 </div>
             </div>
@@ -94,7 +102,7 @@
         </form>
         <!-- END FORGOT PASSWORD FORM -->
         <!-- BEGIN REGISTRATION FORM -->
-        <form class="form-vertical register-form" action="">
+        <form class="form-vertical register-form" action="" method="post">
             {!! csrf_field() !!}
             <h3 class="">Sign Up</h3>
             <p>Enter your account details below:</p>

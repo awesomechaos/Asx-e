@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use App\Http\Controllers\Controller;
+use Mail;
+use Illuminate\Mail\Message;
 
 class LoginController extends Controller
 {
@@ -33,12 +35,38 @@ class LoginController extends Controller
     }
 
     /**
-     * @param Request $request
+     * login
+     * @param LoginRequest|Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function login(LoginRequest $request)
     {
         $input = $request->all();
-        var_dump($input);
+        if (Auth::attempt(['account' => $input['username'], 'password' => $input['password']], isset($input['remember']) ? true : false)) {
+           //login
+           return redirect()->intended('admin');
+        }
+    }
+
+    /**
+     * find password
+     * @param Request $request
+     */
+    public function findPassword(Request $request)
+    {
+//        $message = []
+        $this->validate($request, [
+            'email' => 'required|email',
+        ]);
+//        $input = $request->all();
+        $data = 'dadada';
+        //
+        Mail::send('welcome', [], function ($message) {
+            $message->from('379006571@qq.com', 'Laravel');
+
+            $message->to('awesomechaos@qq.com');
+        });
+
     }
     /**
      * Show the form for creating a new resource.
