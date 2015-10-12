@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use App\Http\Controllers\Controller;
+use App\Model\Admin\Password_reset;
 use Mail;
+use DB;
+use Carbon\Carbon;
 use Illuminate\Mail\Message;
 
 class LoginController extends Controller
@@ -54,12 +57,17 @@ class LoginController extends Controller
      */
     public function findPassword(Request $request)
     {
-//        $message = []
         $this->validate($request, [
             'email' => 'required|email',
         ]);
-//        $input = $request->all();
-        $data = 'dadada';
+        $token = str_random('200');
+        $passwordReset = new Password_reset;
+        $passwordReset->email = 'ha@qq.com';
+        $passwordReset->token = $token;
+        $passwordReset->save();
+
+//        DB::table('password_resets')->insert(['email'=>'aa@qq.com','token' => $token,'created_at' => Carbon::now()]);
+//        DB::table('users')->insert(['account'=>'aa@qq.com','email'=>'aa@qq.com','password'=>'$2y$10$BifbC4S0bk1qlWK8JnK6c.8.392vcs5SrbLBMm7NseqALQyCwDRqy','nickname' => 'ha','authority'=>'5','menu'=>'all','validationTime' => Carbon::now()]);
         //
         Mail::send('welcome', [], function ($message) {
             $message->from('379006571@qq.com', 'Laravel');

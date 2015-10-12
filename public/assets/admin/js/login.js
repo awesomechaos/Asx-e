@@ -111,9 +111,13 @@ var Login = function () {
 						},
 						error: function(msg) {
 							var m = msg.responseJSON;
-							console.log(m);
-							$('#forget-error span').html(m.email)
-							$('#forget-error').show();
+                            if (m==null) {
+                                $('#forget-error span').html('服务器累坏了,请稍后再试')
+                                $('#forget-error').show();
+                            } else {
+                                $('#forget-error span').html(m.email)
+                                $('#forget-error').show();
+                            }
 						}
 					});
 	            }
