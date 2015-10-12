@@ -14,6 +14,15 @@ use Illuminate\Mail\Message;
 class LoginController extends Controller
 {
     /**
+     * @var Model Password_reset
+     */
+    protected $passwordReset;
+
+    public function __construct()
+    {
+        $this->passwordReset = new Password_reset;
+    }
+    /**
      * Index login method with index view
      */
     public function index()
@@ -58,24 +67,39 @@ class LoginController extends Controller
     public function findPassword(Request $request)
     {
         $this->validate($request, [
-            'email' => 'required|email',
+            'email' => 'required|email|exists:users,email',
         ]);
         $token = str_random('200');
-        $passwordReset = new Password_reset;
-        $passwordReset->email = 'ha@qq.com';
-        $passwordReset->token = $token;
-        $passwordReset->save();
-
-//        DB::table('password_resets')->insert(['email'=>'aa@qq.com','token' => $token,'created_at' => Carbon::now()]);
-//        DB::table('users')->insert(['account'=>'aa@qq.com','email'=>'aa@qq.com','password'=>'$2y$10$BifbC4S0bk1qlWK8JnK6c.8.392vcs5SrbLBMm7NseqALQyCwDRqy','nickname' => 'ha','authority'=>'5','menu'=>'all','validationTime' => Carbon::now()]);
-        //
-        Mail::send('welcome', [], function ($message) {
-            $message->from('379006571@qq.com', 'Laravel');
-
-            $message->to('awesomechaos@qq.com');
-        });
-
+        if ($this->passwordReset->createToken($token)) {
+            Mail::send('welcome', [], function ($message) {
+                //asx:更改邮件内容
+                $message->from('379006571@qq.com', 'Laravel');
+                $message->to('awesomechaos@qq.com');
+            });
+        };
     }
+
+    /**
+     *
+     */
+    public function resetPassword(Request $request)
+    {
+        $this->validate($request, [
+            'token' => 'required|min:200',
+        ]);
+        if (strlen($request['token']) != 200) {
+            return abort(401);
+        }
+        if ($result = $this->passwordReset->checkToken($request['token'])) {
+            $email = $result['email'];
+            return view('admin.resetpassword', compact('email'));
+        } else {
+            $error = "密码重置已过期,请重新来过.<br/>5秒后自动跳转";
+            $url = url('/admin/login');
+            return view('error', compact('error', 'url'));
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *

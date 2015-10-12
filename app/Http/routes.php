@@ -21,6 +21,7 @@ Route::get('admin/login', 'LoginController@admin');
 Route::get('login', 'LoginController@index');
 Route::get('admin/logout', ['middleware' => 'auth', 'uses' => 'Admin\BaseController@logout']);
 Route::post('admin/findPassword', 'LoginController@findPassword');
+Route::get('admin/resetPassword', 'LoginController@resetPassword');
 Route::get('password/email', 'Auth\PasswordController@getEmail');
 
 //asx:生成config

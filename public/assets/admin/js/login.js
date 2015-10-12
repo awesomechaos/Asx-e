@@ -107,7 +107,10 @@ var Login = function () {
 						data: { _token: $('.forget-form :input[name=_token]').val(), email: $('.forget-form :input[name=email]').val()},
 						dataType: "json",
 						success: function(msg){
-						console.log(msg);
+							$('#forget-error').removeClass();
+							$('#forget-error').addClass('alert alert-success');
+							$('#forget-error span').html('邮件已发送')
+							$('#forget-error').show();
 						},
 						error: function(msg) {
 							var m = msg.responseJSON;
@@ -126,7 +129,28 @@ var Login = function () {
 	        $('.forget-form input').keypress(function (e) {
 	            if (e.which == 13) {
 	                if ($('.forget-form').validate().form()) {
-	                    window.location.href = "index.html";
+						$.ajax({
+							type: "POST",
+							url: "/admin/findPassword",
+							data: { _token: $('.forget-form :input[name=_token]').val(), email: $('.forget-form :input[name=email]').val()},
+							dataType: "json",
+							success: function(msg){
+								$('#forget-error').removeClass();
+								$('#forget-error').addClass('alert alert-success');
+								$('#forget-error span').html('邮件已发送')
+								$('#forget-error').show();
+							},
+							error: function(msg) {
+								var m = msg.responseJSON;
+								if (m==null) {
+									$('#forget-error span').html('服务器累坏了,请稍后再试')
+									$('#forget-error').show();
+								} else {
+									$('#forget-error span').html(m.email)
+									$('#forget-error').show();
+								}
+							}
+						});
 	                }
 	                return false;
 	            }
