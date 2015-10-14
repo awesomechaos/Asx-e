@@ -97,9 +97,13 @@ return [
             //asx:完善登陆注册等中文提示
             'required' => '密码不能为空',
             'min' => '密码至少:min位',
+            'confirmed' => '密码输入不相同, 请再次输入',
         ],
         'email' => [
             'exists' => '该Email不存在',
+        ],
+        'token' => [
+            'min' => 'token错误, 请点击Email中的网址重新登录',
         ]
     ],
 

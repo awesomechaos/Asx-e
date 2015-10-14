@@ -16,12 +16,17 @@ Route::get('/', function () {
 });
 Route::get('admin', ['middleware' => 'auth', 'uses' => 'Admin\AdminController@i']);
 
+
 Route::post('admin/login', 'LoginController@login');
 Route::get('admin/login', 'LoginController@admin');
 Route::get('login', 'LoginController@index');
 Route::get('admin/logout', ['middleware' => 'auth', 'uses' => 'Admin\BaseController@logout']);
+//get token by email
 Route::post('admin/findPassword', 'LoginController@findPassword');
-Route::get('admin/resetPassword', 'LoginController@resetPassword');
+//click email to reset password
+Route::get('admin/resetPassword', 'LoginController@resetPage');
+//submit reset
+Route::post('admin/resetPassword', 'LoginController@resetPassword');
 Route::get('password/email', 'Auth\PasswordController@getEmail');
 
 //asx:生成config

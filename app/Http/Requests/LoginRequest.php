@@ -25,7 +25,7 @@ class LoginRequest extends Request
     {
         return [
             'username' => 'required|exists:users,account|email|max:255',
-            'password' => 'required|min:4'
+            'password' => 'required|min:6'
         ];
     }
 }

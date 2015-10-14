@@ -145,6 +145,41 @@ var Glo = function () {
                 Glo.showTask(result.task);
             });
             
+        },
+        
+        resetPasswordCheck: function() {
+            $('#password input').blur(function(){
+                if (!$('#password input').val() || $('#password input').val().length < 6) {
+                    $('#password').addClass('error');
+                    $('#password span').show();
+                } else {
+                    $('#password').removeClass('error');
+                    $('#password span').hide();
+                }
+            });
+            $('#password_confirm input').blur(function(){
+                if(!$('#password_confirm input').val() || $('#password input').val().length < 6 ||
+                        $('#password_confirm input').val() != $('#password input').val()) {
+                    $('#password_confirm').addClass('error');
+                    $('#password_confirm span').show();
+                } else {
+                    $('#password_confirm').removeClass('error');
+                    $('#password_confirm span').hide();
+                }
+            });
+            $('.submit-btn').click(function(){
+                if ($('#password input').val() && 
+                        $('#password_confirm input').val() &&
+                            $('#password input').val() == $('#password_confirm input').val()) {
+                                $('form').submit();
+                } else {
+                    $('#password_confirm').addClass('error');
+                    $('#password_confirm span').show();
+                    $('#password_confirm input').focus();
+                }
+                            
+            });
+        
         }
 
     };

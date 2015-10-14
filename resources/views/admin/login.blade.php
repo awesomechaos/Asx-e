@@ -53,7 +53,7 @@
                 <div class="controls">
                     <div class="input-icon left">
                         <i class="icon-lock"></i>
-                        {!! Form::input('text', 'password', '', ['placeholder' => 'Password', 'class' => 'm-wrap placeholder-no-fix']) !!}
+                        {!! Form::input('password', 'password', '', ['placeholder' => 'Password', 'class' => 'm-wrap placeholder-no-fix']) !!}
                     </div>
                 </div>
             </div>

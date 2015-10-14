@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Admin\User;
+use App\Model\Admin\Password_reset;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use App\Http\Controllers\Controller;
-use App\Model\Admin\Password_reset;
 use Mail;
-use DB;
-use Carbon\Carbon;
-use Illuminate\Mail\Message;
+use Auth;
+use Config;
 
+/**
+ * Class LoginController
+ * @package App\Http\Controllers
+ */
 class LoginController extends Controller
 {
     /**
@@ -70,19 +74,26 @@ class LoginController extends Controller
             'email' => 'required|email|exists:users,email',
         ]);
         $token = str_random('200');
-        if ($this->passwordReset->createToken($token)) {
+        if ($this->passwordReset->createToken($request['email'], $token)) {
             Mail::send('welcome', [], function ($message) {
                 //asx:更改邮件内容
-                $message->from('379006571@qq.com', 'Laravel');
+                $message->from(Config::get('mail.from')['address'], Config::get('mail.from')['name']);
+                $message->subject('密码找回');
                 $message->to('awesomechaos@qq.com');
             });
-        };
+        } else {
+            $msg = array('email' => 'Invalid Email');
+            echo json_encode($msg);
+        }
     }
 
+
     /**
-     *
+     *  show reset password page
+     * @param Request $request
+     * @return \Illuminate\View\View|void
      */
-    public function resetPassword(Request $request)
+    public function resetPage(Request $request)
     {
         $this->validate($request, [
             'token' => 'required|min:200',
@@ -91,13 +102,39 @@ class LoginController extends Controller
             return abort(401);
         }
         if ($result = $this->passwordReset->checkToken($request['token'])) {
-            $email = $result['email'];
-            return view('admin.resetpassword', compact('email'));
+            $token = $request['token'];
+            return view('admin.resetPassword',compact('token'));
         } else {
-            $error = "密码重置已过期,请重新来过.<br/>5秒后自动跳转";
+            $error = "密码重置已失效,请重新来过.<br/>5秒后自动跳转";
             $url = url('/admin/login');
             return view('error', compact('error', 'url'));
         }
+    }
+
+    /**
+     * @param Request $request
+     */
+    public function resetPassword(Request $request)
+    {
+        $this->validate($request, [
+            'password' => 'required|confirmed',
+            'token' => 'required|min:200',
+        ]);
+
+        if (strlen($request['token']) != 200) {
+            return abort(401);
+        }
+
+        if ($result = $this->passwordReset->checkToken($request['token'])) {
+            $email = $result['email'];
+            $password = bcrypt($request['password']);
+            $user = new User();
+            if ($user->resetPassword($email, $password)) {
+                echo '已成功重置';
+            }
+        }
+        echo $request['token'];
+        echo "yh";
     }
 
     /**
