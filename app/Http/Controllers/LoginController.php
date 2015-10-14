@@ -75,15 +75,15 @@ class LoginController extends Controller
         ]);
         $token = str_random('200');
         if ($this->passwordReset->createToken($request['email'], $token)) {
-            Mail::send('welcome', [], function ($message) {
-                //asx:更改邮件内容
+            Mail::send('admin.verify_reset_email', ['action' => '您正在重置密码：', 'url' => action('LoginController@resetPage', ['token' => $token])], function ($message) {
                 $message->from(Config::get('mail.from')['address'], Config::get('mail.from')['name']);
                 $message->subject('密码找回');
                 $message->to('awesomechaos@qq.com');
             });
         } else {
-            $msg = array('email' => 'Invalid Email');
-            echo json_encode($msg);
+            $msg = array('email' => '该账号需要通过Email验证, 才能改密码');
+            return response(json_encode($msg), $status = '422')
+                ->header('Content-Type', 'application/json');
         }
     }
 
@@ -113,6 +113,7 @@ class LoginController extends Controller
 
     /**
      * @param Request $request
+     * @return $this|\Illuminate\View\View
      */
     public function resetPassword(Request $request)
     {
@@ -125,16 +126,24 @@ class LoginController extends Controller
             return abort(401);
         }
 
-        if ($result = $this->passwordReset->checkToken($request['token'])) {
+        if ($result = $this->passwordReset->getEmail($request['token'])) {
             $email = $result['email'];
             $password = bcrypt($request['password']);
             $user = new User();
             if ($user->resetPassword($email, $password)) {
-                echo '已成功重置';
+                $resetPassword = true;
+                $head['title'] = 'Login';
+                if (!isset($_COOKIE['style_color'])) {
+                    $head['style_color'] = 'default';
+                } else {
+                    $head['style_color'] = $_COOKIE['style_color'];
+                }
+                $this->passwordReset->deleteToken($email);
+                return view('admin.login', compact('resetPassword', 'head'));
+            } else {
+                return back()->withInput()->withErrors('重置密码错误, 请稍后再试');
             }
         }
-        echo $request['token'];
-        echo "yh";
     }
 
     /**
@@ -147,59 +156,5 @@ class LoginController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

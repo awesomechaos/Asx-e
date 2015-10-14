@@ -30,6 +30,12 @@
         <form class="form-vertical login-form" action="" method="post">
             {!! Form::token() !!}
             <h3 class="form-title">Login Before Enjoy</h3>
+            @if (isset($resetPassword))
+                <div class="alert alert-success" style="margin-bottom: 2px;">
+                    <button class="close" data-dismiss="alert"></button>
+                    <span>密码已重置, 请登录</span>
+                </div>
+            @endif
             @if (count($errors) > 0)
                 @foreach ($errors->all() as $error)
                     <div class="alert alert-error" style="margin-bottom: 2px;">

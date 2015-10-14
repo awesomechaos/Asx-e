@@ -107,13 +107,15 @@ var Login = function () {
 						data: { _token: $('.forget-form :input[name=_token]').val(), email: $('.forget-form :input[name=email]').val()},
 						dataType: "json",
 						success: function(msg){
-							$('#forget-error').removeClass();
-							$('#forget-error').addClass('alert alert-success');
+							$('#forget-error').removeClass('alert-error');
+							$('#forget-error').addClass('alert-success');
 							$('#forget-error span').html('邮件已发送')
 							$('#forget-error').show();
 						},
 						error: function(msg) {
 							var m = msg.responseJSON;
+							$('#forget-error').removeClass('alert-success');
+							$('#forget-error').addClass('alert-error');
                             if (m==null) {
                                 $('#forget-error span').html('服务器累坏了,请稍后再试')
                                 $('#forget-error').show();

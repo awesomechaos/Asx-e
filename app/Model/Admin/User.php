@@ -24,11 +24,12 @@ class User extends Model
      */
     public function resetPassword($email, $password)
     {
-        return $this->where('email', $email)->where('authority', '<>', 0)->update(['password' => $password]);
+        return $this->where('email', $email)->where('authority', '>', 0)->update(['password' => $password, 'remember_token' => '', 'updated_at' => Carbon::now()]);
     }
 
     /**
      * check whether is locked
+     * authority: 0 - invalid, -1 - locked
      * @param $email
      * @return bool
      */

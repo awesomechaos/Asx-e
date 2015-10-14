@@ -29,7 +29,7 @@
             <br/>
             <br/>
             <div class="row-fluid profile">
-                <div style="height: auto;" id="accordion3-3" class="accordion in collapse">
+                <div style="height: auto;" class="accordion in collapse">
                     <form action="/admin/resetPassword" method="post">
                         @if (count($errors) > 0)
                             @foreach ($errors->all() as $error)
@@ -70,16 +70,6 @@
 
     {!! Html::script('assets/admin/js/global.js') !!}
     {!! Html::script('http://apps.bdimg.com/libs/jquery/1.10.1/jquery.min.js') !!}
-    {!! Html::script('assets/admin/js/jquery-ui-1.10.1.custom.min.js') !!}
-    {!! Html::script('http://apps.bdimg.com/libs/bootstrap/2.3.1/js/bootstrap.min.js') !!}
-    {!! Html::script('assets/admin/js/jquery-migrate-1.2.1.min.js') !!}
-    {!! Html::script('assets/admin/js/jquery.slimscroll.min.js') !!}
-    {!! Html::script('assets/admin/js/jquery.blockui.min.js') !!}
-    {!! Html::script('assets/admin/js/jquery.cookie.min.js') !!}
-    {!! Html::script('assets/admin/js/jquery.uniform.min.js') !!}
-    {!! Html::script('assets/admin/js/jquery.validate.min.js') !!}
-    {!! Html::script('assets/admin/js/app.js') !!}
-    {!! Html::script('assets/admin/js/login.js') !!}
     <script type="text/javascript">
         $(document).ready(function() {
             Glo.resetPasswordCheck();
