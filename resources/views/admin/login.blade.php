@@ -36,6 +36,18 @@
                     <span>账号已验证, 请登录</span>
                 </div>
             @endif
+            @if (isset($validationEmail))
+                <div class="alert alert-success" style="margin-bottom: 2px;">
+                    <button class="close" data-dismiss="alert"></button>
+                    <span>验证邮件已发送</span>
+                </div>
+            @endif
+            @if (session('validation'))
+                <div class="alert alert-success" style="margin-bottom: 2px;" id="validation">
+                    <button class="close" data-dismiss="alert"></button>
+                    <span>如果未收到邮件, {!! session('validation') !!}</span>
+                </div>
+            @endif
             @if (isset($resetPassword))
                 <div class="alert alert-success" style="margin-bottom: 2px;">
                     <button class="close" data-dismiss="alert"></button>

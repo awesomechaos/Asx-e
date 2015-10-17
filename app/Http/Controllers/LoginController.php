@@ -68,7 +68,8 @@ class LoginController extends Controller
             'password' => 'required|min:6'
         ]);
         if (!$this->user->checkValidation($request['username'])) {
-            return back()->withInput()->withErrors('账号未验证, 请先去邮箱验证账号');
+            $url = action('LoginController@registerValidationEmail', ['username' => base64_encode($request['username'])]);
+            return back()->withInput()->withErrors('账号未验证, 请先去邮箱验证账号')->with('validation', '<a href="'.$url.'">点击这里重新发送</a>');
         }
         if (Auth::attempt(['account' => $request['username'], 'password' => $request['password']], isset($request['remember']) ? true : false)) {
             //login
@@ -76,6 +77,34 @@ class LoginController extends Controller
         } else {
             return back()->withInput()->withErrors('密码错误');
         }
+    }
+
+    /**
+     * 重新发送验证邮件
+     * @param Request $request
+     */
+    public function registerValidationEmail(Request $request)
+    {
+        $this->validate($request, [
+            'username' => 'required',
+        ]);
+        $username = base64_decode($request['username']);
+        $token = str_random('200');
+        $validation = new Email_validation_change;
+        $validation->createValidationToken($username, $token);
+        Mail::send('admin.verify_reset_email', ['action' => '验证账号', 'url' => action('LoginController@registerValidation', ['token' => $token])], function ($message) use($username) {
+            $message->from(Config::get('mail.from')['address'], Config::get('mail.from')['name']);
+            $message->subject('新注册用户验证邮件');
+            $message->to($username);
+        });
+        $validationEmail = true;
+        $head['title'] = 'Login';
+        if (!isset($_COOKIE['style_color'])) {
+            $head['style_color'] = 'default';
+        } else {
+            $head['style_color'] = $_COOKIE['style_color'];
+        }
+        return view('admin.login', compact('validationEmail', 'head'));
     }
 
     /**
@@ -208,7 +237,7 @@ class LoginController extends Controller
                 } else {
                     $head['style_color'] = $_COOKIE['style_color'];
                 }
-                $validation->deleteToken($request['email']);
+                $validation->deleteToken($v->username);
                 return view('admin.login', compact('validated', 'head'));
             }
         }

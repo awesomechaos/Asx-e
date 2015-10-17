@@ -26,6 +26,8 @@ Route::get('admin/logout', ['middleware' => 'auth', 'uses' => 'Admin\BaseControl
 Route::post('admin/checkRegisterEmail', ['middleware' => 'blacklist', 'uses' => 'LoginController@checkRegisterEmail']);
 //register
 Route::post('admin/register', ['middleware' => 'blacklist', 'uses' => 'LoginController@register']);
+//resend validation email
+Route::get('admin/registerValidationEmail', ['middleware' => 'blacklist', 'uses' => 'LoginController@registerValidationEmail']);
 //click email to valid account
 Route::get('admin/registerValidation', ['middleware' => 'blacklist', 'uses' => 'LoginController@registerValidation']);
 //get token by email
