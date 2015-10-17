@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'CreateAuthorityMenusTableAsx' => $baseDir . '/database/migrations/2015_10_08_022448_create_authority_menus_table_asx.php',
     'CreateConfigsTableAsx' => $baseDir . '/database/migrations/2015_10_05_035718_create_configs_table_asx.php',
+    'CreateEmailValidationChangesTableAsx' => $baseDir . '/database/migrations/2015_10_17_135417_create_email_validation_changes_table_asx.php',
     'CreateMenusTableAsx' => $baseDir . '/database/migrations/2015_10_02_030724_create_menus_table_asx.php',
     'CreateNotificationTypesTableAsx' => $baseDir . '/database/migrations/2015_10_01_090958_create_notification_types_table_asx.php',
     'CreatePasswordResetsTableAsx' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table_asx.php',

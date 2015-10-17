@@ -54,8 +54,10 @@ return [
         'failure' => 'default',
         'normal' => 'info',
     ),
-    'notification_type' => array(
+    'configs' => array(
         'notification_max_length' => '80',
         'message_show_time' => '3000',
+        'default_admin_authority' => '1',
+        'default_admin_menu' => 'all',
     ),
 ];

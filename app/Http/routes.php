@@ -17,17 +17,23 @@ Route::get('/', function () {
 Route::get('admin', ['middleware' => 'auth', 'uses' => 'Admin\AdminController@i']);
 
 
-Route::post('admin/login', 'LoginController@login');
 Route::get('admin/login', 'LoginController@admin');
 Route::get('login', 'LoginController@index');
+//login and logout
+Route::post('admin/login', ['middleware' => 'blacklist', 'uses' => 'LoginController@login']);
 Route::get('admin/logout', ['middleware' => 'auth', 'uses' => 'Admin\BaseController@logout']);
+//ajax check if register account exists
+Route::post('admin/checkRegisterEmail', ['middleware' => 'blacklist', 'uses' => 'LoginController@checkRegisterEmail']);
+//register
+Route::post('admin/register', ['middleware' => 'blacklist', 'uses' => 'LoginController@register']);
+//click email to valid account
+Route::get('admin/registerValidation', ['middleware' => 'blacklist', 'uses' => 'LoginController@registerValidation']);
 //get token by email
-Route::post('admin/findPassword', 'LoginController@findPassword');
+Route::post('admin/findPassword', ['middleware' => 'blacklist', 'uses' => 'LoginController@findPassword']);
 //click email to reset password
-Route::get('admin/resetPassword', 'LoginController@resetPage');
+Route::get('admin/resetPassword', ['middleware' => 'blacklist', 'uses' => 'LoginController@resetPage']);
 //submit reset
-Route::post('admin/resetPassword', 'LoginController@resetPassword');
-Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('admin/resetPassword', ['middleware' => 'blacklist', 'uses' => 'LoginController@resetPassword']);
 
 //asx:生成config
 Route::get('admin/config', 'Admin\AdminController@getConfigFromDatabase');

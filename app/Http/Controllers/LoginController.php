@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Model\Admin\User;
 use App\Model\Admin\Password_reset;
+use App\Model\Admin\Email_validation_change;
 use Illuminate\Http\Request;
-use App\Http\Requests\LoginRequest;
 use App\Http\Controllers\Controller;
 use Mail;
 use Auth;
@@ -22,9 +22,15 @@ class LoginController extends Controller
      */
     protected $passwordReset;
 
+    /**
+     * @var Model User
+     */
+    protected $user;
+
     public function __construct()
     {
         $this->passwordReset = new Password_reset;
+        $this->user = new User();
     }
     /**
      * Index login method with index view
@@ -55,12 +61,20 @@ class LoginController extends Controller
      * @param LoginRequest|Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function login(LoginRequest $request)
+    public function login(Request $request)
     {
-        $input = $request->all();
-        if (Auth::attempt(['account' => $input['username'], 'password' => $input['password']], isset($input['remember']) ? true : false)) {
-           //login
+        $this->validate($request, [
+            'username' => 'required|exists:users,account|email|max:255',
+            'password' => 'required|min:6'
+        ]);
+        if (!$this->user->checkValidation($request['username'])) {
+            return back()->withInput()->withErrors('账号未验证, 请先去邮箱验证账号');
+        }
+        if (Auth::attempt(['account' => $request['username'], 'password' => $request['password']], isset($request['remember']) ? true : false)) {
+            //login
            return redirect()->intended('admin');
+        } else {
+            return back()->withInput()->withErrors('密码错误');
         }
     }
 
@@ -75,10 +89,11 @@ class LoginController extends Controller
         ]);
         $token = str_random('200');
         if ($this->passwordReset->createToken($request['email'], $token)) {
-            Mail::send('admin.verify_reset_email', ['action' => '您正在重置密码：', 'url' => action('LoginController@resetPage', ['token' => $token])], function ($message) {
+            $email = $request['email'];
+            Mail::send('admin.verify_reset_email', ['action' => '重置密码', 'url' => action('LoginController@resetPage', ['token' => $token])], function ($message) use ($email) {
                 $message->from(Config::get('mail.from')['address'], Config::get('mail.from')['name']);
                 $message->subject('密码找回');
-                $message->to('awesomechaos@qq.com');
+                $message->to($email);
             });
         } else {
             $msg = array('email' => '该账号需要通过Email验证, 才能改密码');
@@ -118,7 +133,7 @@ class LoginController extends Controller
     public function resetPassword(Request $request)
     {
         $this->validate($request, [
-            'password' => 'required|confirmed',
+            'password' => 'required|min:6|confirmed',
             'token' => 'required|min:200',
         ]);
 
@@ -129,8 +144,7 @@ class LoginController extends Controller
         if ($result = $this->passwordReset->getEmail($request['token'])) {
             $email = $result['email'];
             $password = bcrypt($request['password']);
-            $user = new User();
-            if ($user->resetPassword($email, $password)) {
+            if ($this->user->resetPassword($email, $password)) {
                 $resetPassword = true;
                 $head['title'] = 'Login';
                 if (!isset($_COOKIE['style_color'])) {
@@ -147,14 +161,78 @@ class LoginController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Register a new account.
      *
+     * @param RegisterRequest|Request $request
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function register(Request $request)
     {
-        //
+        $this->validate($request, [
+            'username' => 'required|email|max:255',
+            'password' => 'required|min:6|confirmed'
+        ]);
+        if ($this->user->register($request['username'], bcrypt($request['password']))) {
+            $validation = new Email_validation_change;
+            $token = str_random('200');
+            if ($validation->createValidationToken($request['username'], $token)) {
+                $email = $request['username'];
+                Mail::send('admin.verify_reset_email', ['action' => '验证账号', 'url' => action('LoginController@registerValidation', ['token' => $token])], function ($message) use($email) {
+                    $message->from(Config::get('mail.from')['address'], Config::get('mail.from')['name']);
+                    $message->subject('新注册用户验证邮件');
+                    $message->to($email);
+                });
+                return json_encode(array("register" => true));
+            } else {
+                $this->user->rollbackRegister($request['username']);
+            }
+        }
+        return json_encode(array("register" => false));
     }
 
+    /**
+     *
+     */
+    public function registerValidation(Request $request)
+    {
+        $this->validate($request, [
+            'token' => 'required|min:200',
+        ]);
+        $validation = new Email_validation_change;
+        if ($v = $validation->getUsername($request['token'])) {
+            if ($this->user->setAccountValidated($v->username)) {
+                $validated = true;
+                $head['title'] = 'Login';
+                if (!isset($_COOKIE['style_color'])) {
+                    $head['style_color'] = 'default';
+                } else {
+                    $head['style_color'] = $_COOKIE['style_color'];
+                }
+                $validation->deleteToken($request['email']);
+                return view('admin.login', compact('validated', 'head'));
+            }
+        }
+        $error = "账号验证失效,请重新来过.<br/>5秒后自动跳转";
+        $url = url('/admin/login');
+        return view('error', compact('error', 'url'));
+    }
+
+    /**
+     * check email if exists
+     * @param Request $request
+     * @return bool
+     * @internal param $email
+     */
+    public function checkRegisterEmail(Request $request)
+    {
+        $this->validate($request, [
+            'username' => 'required|email|max:255',
+        ]);
+        if ($this->user->checkRegisterEmail($request['username'])) {
+            return json_encode(array('check' => true));
+        }
+        return json_encode(array('check' => false));
+
+    }
 
 }

@@ -14,7 +14,8 @@ var Login = function () {
 						email: true
 	                },
 	                password: {
-	                    required: true
+	                    required: true,
+						minlength:6
 	                },
 	                remember: {
 	                    required: false
@@ -101,6 +102,7 @@ var Login = function () {
 	            },
 
 	            submitHandler: function (form) {
+					$('#forget-btn').attr("disabled","disabled");
 	                $.ajax({
 						type: "POST",
 						url: "/admin/findPassword",
@@ -111,6 +113,7 @@ var Login = function () {
 							$('#forget-error').addClass('alert-success');
 							$('#forget-error span').html('邮件已发送')
 							$('#forget-error').show();
+							$('#forget-btn').attr("disabled","disabled");
 						},
 						error: function(msg) {
 							var m = msg.responseJSON;
@@ -123,6 +126,7 @@ var Login = function () {
                                 $('#forget-error span').html(m.email)
                                 $('#forget-error').show();
                             }
+							$('#forget-btn').attr("disabled","disabled");
 						}
 					});
 	            }
@@ -137,13 +141,15 @@ var Login = function () {
 							data: { _token: $('.forget-form :input[name=_token]').val(), email: $('.forget-form :input[name=email]').val()},
 							dataType: "json",
 							success: function(msg){
-								$('#forget-error').removeClass();
-								$('#forget-error').addClass('alert alert-success');
+								$('#forget-error').removeClass('alert-error');
+								$('#forget-error').addClass('alert-success');
 								$('#forget-error span').html('邮件已发送')
 								$('#forget-error').show();
 							},
 							error: function(msg) {
 								var m = msg.responseJSON;
+								$('#forget-error').removeClass('alert-success');
+								$('#forget-error').addClass('alert-error');
 								if (m==null) {
 									$('#forget-error span').html('服务器累坏了,请稍后再试')
 									$('#forget-error').show();
@@ -158,14 +164,14 @@ var Login = function () {
 	            }
 	        });
 
-	        jQuery('#forget-password').click(function () {
-	            jQuery('.login-form').hide();
-	            jQuery('.forget-form').show();
+	        $('#forget-password').click(function () {
+	            $('.login-form').hide();
+	            $('.forget-form').show();
 	        });
 
-	        jQuery('#back-btn').click(function () {
-	            jQuery('.login-form').show();
-	            jQuery('.forget-form').hide();
+	        $('#back-btn').click(function () {
+	            $('.login-form').show();
+	            $('.forget-form').hide();
 	        });
 
 	        $('.register-form').validate({
@@ -175,27 +181,24 @@ var Login = function () {
 	            ignore: "",
 	            rules: {
 	                username: {
-	                    required: true
+	                    required: true,
+						email:true
 	                },
 	                password: {
-	                    required: true
+	                    required: true,
+						minlength:6
 	                },
-	                rpassword: {
+	                password_confirmation: {
 	                    equalTo: "#register_password"
 	                },
 	                email: {
 	                    required: true,
 	                    email: true
-	                },
-	                tnc: {
-	                    required: true
 	                }
 	            },
 
 	            messages: { // custom messages for radio buttons and checkboxes
-	                tnc: {
-	                    required: "Please accept TNC first."
-	                }
+
 	            },
 
 	            invalidHandler: function (event, validator) { //display error alert on form submit   
@@ -221,21 +224,99 @@ var Login = function () {
 	            },
 
 	            submitHandler: function (form) {
-	                // window.location.href = "index.html";
+					$('#register-btn').attr("disabled","disabled");
+					if (!$('.register-form input[name="isChecked"]').val()) {
+						$('#register-error').removeClass('alert-success');
+						$('#register-error').addClass('alert-error');
+						$('#register-error span').html('服务器累坏了,请稍后再试')
+						$('#register-error').show();
+						$('#register-btn').attr("disabled","");
+					} else {
+						$.ajax({
+							type: "POST",
+							url: "/admin/register",
+							data: { _token: $('.register-form :input[name=_token]').val(), username: $('.register-form :input[name=username]').val(),
+										password: $('.register-form :input[name=password]').val(), password_confirmation: $('.register-form :input[name=password_confirmation]').val()},
+							dataType: "json",
+							success: function(msg){
+								if (msg.register) {
+									$('#register-error').removeClass('alert-error');
+									$('#register-error').addClass('alert-success');
+									$('#register-error span').html('注册成功,请前往邮箱验证')
+									$('#register-error').show();
+								} else {
+									$('#register-error').removeClass('alert-success');
+									$('#register-error').addClass('alert-error');
+									$('#register-error span').html('注册失败,请重新尝试')
+									$('#register-error').show();
+								}
+								$('#register-btn').attr("disabled","");
+							},
+							error: function(msg) {
+								var m = msg.responseJSON;
+								$('#register-error').removeClass('alert-success');
+								$('#register-error').addClass('alert-error');
+								if (m==null) {
+									$('#register-error span').html('服务器累坏了,请稍后再试')
+									$('#register-error').show();
+								} else {
+									
+								}
+								$('#register-btn').attr("disabled","");
+							}
+						});
+					}
+					
+					
 	            }
 	        });
 
-	        jQuery('#register-btn').click(function () {
-	            jQuery('.login-form').hide();
-	            jQuery('.register-form').show();
+			$('.register-form input[name="username"]').blur(function(){
+				$.ajax({
+					type: "POST",
+					url: "/admin/checkRegisterEmail",
+					data: { _token: $('.register-form :input[name=_token]').val(), username: $('.register-form :input[name=username]').val()},
+					dataType: "json",
+					success: function(msg){
+						if (!msg.check) {
+							$('#register-error').removeClass('alert-error');
+							$('#register-error').addClass('alert-success');
+							$('#register-error span').html('该邮箱未注册,可用')
+							$('.register-form input[name="isChecked"]').val(true);
+							$('#register-error').show();
+						} else {
+							$('#register-error').removeClass('alert-success');
+							$('#register-error').addClass('alert-error');
+							$('#register-error span').html('该邮箱已注册')
+							$('.register-form input[name="isChecked"]').val(false);
+							$('#register-error').show();
+						}
+					},
+					error: function(msg) {
+						var m = msg.responseJSON;
+						$('#register-error').removeClass('alert-success');
+						$('#register-error').addClass('alert-error');
+						if (m==null) {
+							$('#register-error span').html('服务器累坏了,请稍后再试')
+							$('#register-error').show();
+						} else {
+							
+						}
+					}
+				});
+			});
+	        $('#register-btn').click(function () {
+	            $('.login-form').hide();
+	            $('.register-form').show();
 	        });
 
-	        jQuery('#register-back-btn').click(function () {
-	            jQuery('.login-form').show();
-	            jQuery('.register-form').hide();
+	        $('#register-back-btn').click(function () {
+	            $('.login-form').show();
+	            $('.register-form').hide();
 	        });
         }
 
     };
 
 }();
+64/27

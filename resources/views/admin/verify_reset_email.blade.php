@@ -30,10 +30,10 @@
                                     </strong>
 
                                     <strong style="display:block;margin-bottom:15px;">
-                                        {{ $action }}
+                                        您正在{{ $action }}
                                     </strong>
                                     <br/>
-                                    <div style="text-align:center"><div style="border-top:1px solid #ddd;width: 600px;display:inline-block;padding:10px"><a style="display:inline-block;background:#fd7b12;border-radius:4px;padding: 3px 15px;color:#fff;text-decoration:none;font-size:12px" href="{{ $url }}" target="_blank">点击这里重置密码</a></div></div>
+                                    <div style="text-align:center"><div style="border-top:1px solid #ddd;width: 600px;display:inline-block;padding:10px"><a style="display:inline-block;background:#fd7b12;border-radius:4px;padding: 3px 15px;color:#fff;text-decoration:none;font-size:12px" href="{{ $url }}" target="_blank">点击这里{{ $action }}</a></div></div>
                                 </div>
                             </div>
                             <div style="width:700px;margin:0 auto;">

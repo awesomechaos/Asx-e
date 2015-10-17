@@ -30,6 +30,12 @@
         <form class="form-vertical login-form" action="" method="post">
             {!! Form::token() !!}
             <h3 class="form-title">Login Before Enjoy</h3>
+            @if (isset($validated))
+                <div class="alert alert-success" style="margin-bottom: 2px;">
+                    <button class="close" data-dismiss="alert"></button>
+                    <span>账号已验证, 请登录</span>
+                </div>
+            @endif
             @if (isset($resetPassword))
                 <div class="alert alert-success" style="margin-bottom: 2px;">
                     <button class="close" data-dismiss="alert"></button>
@@ -110,14 +116,19 @@
         <!-- BEGIN REGISTRATION FORM -->
         <form class="form-vertical register-form" action="" method="post">
             {!! csrf_field() !!}
+            {!! Form::input('hidden', 'isChecked') !!}
             <h3 class="">Sign Up</h3>
             <p>Enter your account details below:</p>
+            <div class="alert alert-error hide" style="margin-bottom: 2px;" id="register-error">
+                <button class="close" data-dismiss="alert"></button>
+                <span></span>
+            </div>
             <div class="control-group">
                 <label class="control-label visible-ie8 visible-ie9">Username</label>
                 <div class="controls">
                     <div class="input-icon left">
                         <i class="icon-user"></i>
-                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="Username" name="username"/>
+                        {!! Form::input('text', 'username', '', ['placeholder' => 'Username Using Email', 'class' => 'm-wrap placeholder-no-fix']) !!}
                     </div>
                 </div>
             </div>
@@ -126,7 +137,7 @@
                 <div class="controls">
                     <div class="input-icon left">
                         <i class="icon-lock"></i>
-                        <input class="m-wrap placeholder-no-fix" type="password" id="register_password" placeholder="Password" name="password"/>
+                        {!! Form::input('password', 'password', '', ['placeholder' => 'Password', 'id' => 'register_password', 'class' => 'm-wrap placeholder-no-fix']) !!}
                     </div>
                 </div>
             </div>
@@ -135,26 +146,8 @@
                 <div class="controls">
                     <div class="input-icon left">
                         <i class="icon-ok"></i>
-                        <input class="m-wrap placeholder-no-fix" type="password" placeholder="Re-type Your Password" name="rpassword"/>
+                        {!! Form::input('password', 'password_confirmation', '', ['placeholder' => 'Re-type Your Password', 'class' => 'm-wrap placeholder-no-fix']) !!}
                     </div>
-                </div>
-            </div>
-            <div class="control-group">
-                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-                <label class="control-label visible-ie8 visible-ie9">Email</label>
-                <div class="controls">
-                    <div class="input-icon left">
-                        <i class="icon-envelope"></i>
-                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="Email" name="email"/>
-                    </div>
-                </div>
-            </div>
-            <div class="control-group">
-                <div class="controls">
-                    <label class="checkbox">
-                        <input type="checkbox" name="tnc"/> I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
-                    </label>
-                    <div id="register_tnc_error"></div>
                 </div>
             </div>
             <div class="form-actions">

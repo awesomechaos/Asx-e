@@ -131,7 +131,7 @@ class AdminController extends BaseController
         echo "    ),".PHP_EOL;
         //notification_types end
         //configs start
-        echo "    'notification_type' => array(".PHP_EOL;
+        echo "    'configs' => array(".PHP_EOL;
         foreach ($configs as $config) {
             echo "        '$config->name' => '$config->value',".PHP_EOL;
         }
