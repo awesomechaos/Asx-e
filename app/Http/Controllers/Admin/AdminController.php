@@ -74,6 +74,7 @@ class AdminController extends BaseController
         $menus = DB::table('menus')
             ->select('id', 'name', 'href', 'icon', 'controller')
             ->where('isMainMenu', '=', 1)
+            ->where('isAdmin', '=', 1)
             ->where('isLock', '=', 0)
             ->orderBy('weight', 'desc')
             ->get();
@@ -82,6 +83,7 @@ class AdminController extends BaseController
             $tmp = DB::table('menus')
                 ->select('id', 'name', 'href', 'controller')
                 ->where('isMainMenu', '=', 0)
+                ->where('isAdmin', '=', 1)
                 ->where('isLock', '=', 0)
                 ->where('mainMenuId', '=', $menu->id)
                 ->orderBy('weight', 'desc')
