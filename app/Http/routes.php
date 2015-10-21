@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('admin', ['middleware' => 'auth', 'uses' => 'Admin\AdminController@i']);
+Route::get('admin', ['middleware' => 'auth', 'uses' => 'Admin\AdminController@index']);
 
 
 Route::get('admin/login', 'LoginController@admin');

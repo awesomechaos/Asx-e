@@ -1,7 +1,7 @@
 <?php
 /*
  * 后台管理的配置文件在此
- * created at 2015-10-09 15:10:25 by script
+ * created at 2015-10-21 14:10:00 by script
  */
 return [
     'menu' => array(
@@ -11,26 +11,6 @@ return [
                   'controller' => '',
                   'id' => '1',
                   'subMenu' => array(),
-        ),
-        'Layouts' => array(
-                  'href' => 'javascript:void(0)',
-                  'icon' => 'icon-home',
-                  'controller' => '',
-                  'id' => '2',
-                  'subMenu' => array(
-                              array(
-                                  'href' => 'admin',
-                                  'name' => 'Dad',
-                                  'controller' => '',
-                                  'id' => '5',
-                              ),
-                              array(
-                                  'href' => 'admin',
-                                  'name' => 'Dadsss',
-                                  'controller' => '',
-                                  'id' => '6',
-                              ),
-                   ),
         ),
         'UI Features' => array(
                   'href' => 'javascript:void(0)',
@@ -46,6 +26,13 @@ return [
                   'id' => '4',
                   'subMenu' => array(),
         ),
+        'Setting' => array(
+                  'href' => 'javascript:void(0)',
+                  'icon' => 'icon-cogs',
+                  'controller' => 'Setting',
+                  'id' => '7',
+                  'subMenu' => array(),
+        ),
     ),
     'notification_type' => array(
         'warning' => 'warning',
@@ -57,7 +44,5 @@ return [
     'configs' => array(
         'notification_max_length' => '80',
         'message_show_time' => '3000',
-        'default_admin_authority' => '1',
-        'default_admin_menu' => 'all',
     ),
 ];

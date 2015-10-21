@@ -82,6 +82,7 @@ class LoginController extends Controller
     /**
      * 重新发送验证邮件
      * @param Request $request
+     * @return \Illuminate\View\View
      */
     public function registerValidationEmail(Request $request)
     {

@@ -8,40 +8,8 @@ use App\Model\Admin\Menu;
 use Auth;
 class AdminController extends BaseController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index(Requests\StoreAdminUserRequest $request)
-    {
-        //
-        $arr = array(
-            0 => array(
-                'key' => 11,
-                'map' => 22,
-                'child' => array(
-                    0 => array(
-                        'key' => 12,
-                        'map' => 23,
-                        'child' => array()
-                    )
-                )
-            ),
-            1 => array(
-                'key' => 21,
-                'map' => 31,
-                'child' => array()
-            )
 
-        );
-//        $user = AdminUser::findOrFail(1);
-//        return view('admin.b');
-        return 'opps';
-//        $tt = array( '1' , '2', '3');
-//        return view('admin.index', compact('arr'));
-    }
-    public function i()
+    public function index()
     {
         //asx:下面这些变成类的数据成员，方法直接读
         $head['title'] = 'test';
@@ -74,7 +42,6 @@ class AdminController extends BaseController
         $menus = DB::table('menus')
             ->select('id', 'name', 'href', 'icon', 'controller')
             ->where('isMainMenu', '=', 1)
-            ->where('isAdmin', '=', 1)
             ->where('isLock', '=', 0)
             ->orderBy('weight', 'desc')
             ->get();
@@ -83,7 +50,6 @@ class AdminController extends BaseController
             $tmp = DB::table('menus')
                 ->select('id', 'name', 'href', 'controller')
                 ->where('isMainMenu', '=', 0)
-                ->where('isAdmin', '=', 1)
                 ->where('isLock', '=', 0)
                 ->where('mainMenuId', '=', $menu->id)
                 ->orderBy('weight', 'desc')
@@ -133,7 +99,7 @@ class AdminController extends BaseController
         echo "    ),".PHP_EOL;
         //notification_types end
         //configs start
-        echo "    'configs' => array(".PHP_EOL;
+        echo "    'notification_type' => array(".PHP_EOL;
         foreach ($configs as $config) {
             echo "        '$config->name' => '$config->value',".PHP_EOL;
         }
