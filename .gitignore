@@ -3,3 +3,4 @@
 *.sql
 
 #phpstorm config
+.idea/workspace.xml
